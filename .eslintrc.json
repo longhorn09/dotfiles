@@ -1,0 +1,6 @@
+{
+    "extends": "google",
+  "rules": {
+    "func-names": ["error", "never"]
+  }
+}
