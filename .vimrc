@@ -3,7 +3,7 @@
 "************************************
 set nocompatible
 "                     set background=dark
-colorscheme ron   "color scheme with muted colors
+colorscheme elflord   "color scheme with muted colors
 set term=ansi
 syntax on
 set showmatch
