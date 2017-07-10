@@ -122,3 +122,4 @@ fi
 LS_COLORS=$LS_COLORS:'di=0;96:' ; export LS_COLORS
 export EDITOR='vim'
 export GOPATH=/home/ntang/go
+export GOBIN=${GOPATH}/bin
