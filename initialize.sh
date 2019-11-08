@@ -26,3 +26,5 @@ sudo apt install materia-gtk-theme -y
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt-get update -y && sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
+
+sudo apt install net-tools -y # needed for netstat -tulpn
