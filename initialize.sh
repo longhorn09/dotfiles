@@ -16,6 +16,11 @@ curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install nodejs -y
 sudo apt install npm -y
 
+# npm initialization
+sudo npm config set init-author-email "norman@normstorm.com" -g
+sudo npm config set init-author-name "Norman Tang" -g
+sudo npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
+
 # setup python 
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget -y
 sudo apt install software-properties-common -y
