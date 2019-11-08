@@ -1,4 +1,8 @@
 #!/bin/bash
+sudo apt-get update -y
+
+# install vim
+sudo apt install vim -y
 
 # setup git
 git config --global user.email "norman@normstorm.com"
@@ -27,7 +31,7 @@ sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update -y
 sudo apt install python3.8 -y
-sudo apt install gnome-tweaks  # need this for setting up right mouse click on laptop trackpad
+sudo apt install gnome-tweaks -y # need this for setting up right mouse click on laptop trackpad
 sudo snap install htop 
 sudo apt install materia-gtk-theme -y
 
