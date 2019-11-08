@@ -18,5 +18,3 @@ sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.8 -y
 sudo apt install gnome-tweaks  # need this for setting up right mouse click on laptop trackpad
-### MS Paint like software
-sudo apt-get update -y
