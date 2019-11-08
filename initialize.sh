@@ -8,11 +8,17 @@ cp ~/configuration/.inputrc ~/
 cp ~/configuration/doupdate.sh ~/
 chmod u+x ~/doupdate.sh
 ### setup node 
-cp ~/configuration/setupnode.sh ~/
-chmod u+x ~/setupnode.sh
 ~/doupdate.sh
+chmod u+x ~/configuration/setupnode.sh
+cd ~/
+~/configuration/setupnode.sh
 ### setup python 
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget -y
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.8 -y
+sudo apt install gnome-tweaks  # need this for setting up right mouse click on laptop trackpad
+### MS Paint like software
+sudo add-apt-repository ppa:pinta-maintainers/pinta-stable
+sudo apt-get update -y
+sudo apt-get install pinta -y
