@@ -21,6 +21,8 @@ sudo apt install python3.8 -y
 sudo apt install gnome-tweaks  # need this for setting up right mouse click on laptop trackpad
 sudo snap install htop 
 sudo apt install materia-gtk-theme -y
+
+### install flatpak
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt-get update -y && sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
