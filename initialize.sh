@@ -28,3 +28,4 @@ sudo apt-get update -y && sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 
 sudo apt install net-tools -y # needed for netstat -tulpn
+sudo apt install wine64 -y # needed for windows emulation
