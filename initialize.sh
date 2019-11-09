@@ -41,8 +41,10 @@ sudo apt-get update -y && sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 
 sudo apt install net-tools -y # needed for netstat -tulpn
+
 # WINE OPTIONAL 
 # sudo apt install wine64 -y # needed for windows emulation
+# sudo apt-get install winetricks -y
 
 # setup some python and akamai stuff
 # sudo apt-get install -y python-setuptools
@@ -52,6 +54,12 @@ pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-pyt
 sudo apt install httpie -y
 pip install httpie-edgegrid  # better to git clone the source repo and  build than do this: https://github.com/akamai/httpie-edgegrid
 
+# virtualbox installation
+sudo apt install virtualbox-dkms -y
+sudo apt-get install virtualbox -y
+sudo apt install virtualbox-ext-pack -y
 
+# final refresh and cleanup
 sudo apt-get upgrade -y
 sudo apt autoremove -y
+
