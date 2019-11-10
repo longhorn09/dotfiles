@@ -67,6 +67,7 @@ sudo apt-get install dconf-editor -y
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # within vim do :PlugInstall
 
+sudo apt install tmux -y
 # final refresh and cleanup
 sudo apt-get upgrade -y
 sudo apt autoremove -y
