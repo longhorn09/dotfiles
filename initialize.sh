@@ -59,7 +59,14 @@ sudo apt install virtualbox-dkms -y
 sudo apt-get install virtualbox -y
 sudo apt install virtualbox-ext-pack -y
 
+# setting list-view as default for nemo file manager (Budgie specific)
+# org : nemo : preferences : default-folder-viewer
+sudo apt-get install dconf-editor -y
+
+# vim configuration
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# within vim do :PlugInstall
+
 # final refresh and cleanup
 sudo apt-get upgrade -y
 sudo apt autoremove -y
-
