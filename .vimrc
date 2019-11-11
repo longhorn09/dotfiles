@@ -25,7 +25,7 @@ set cindent
 call plug#begin('~/.vim/plugged')   " Make sure you use single quotes, Avoid using standard Vim directory names like 'plugin'
 
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'   " Any valid git URL is allowed
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " Fuzzy finder
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " Fuzzy finder
 Plug 'sheerun/vim-polyglot'        "this is for language syntax highlighting
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
