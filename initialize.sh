@@ -68,7 +68,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # within vim do :PlugInstall
 
 sudo apt install tmux -y # terminal multiplexer
-# sudo snap install ngrok  # ngrok
+
+# needed for Slack chatbot dev
+sudo snap install ngrok  # ngrok - https tunneling thru localhost
 
 # final refresh and cleanup
 sudo apt-get upgrade -y
