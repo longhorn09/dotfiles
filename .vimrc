@@ -17,6 +17,8 @@ set smartcase        "will do case sensitivity search if search term has mixed c
 set cmdheight=2      "Better display for messages  , also needed for coc
 set visualbell       "gets rid of annoying beeps
 set tabstop=2
+set expandtab        " spaces instead of tabs
+set shiftwidth=2     " number of space characters used for indentation
 set smarttab
 set cindent
 "#######################################
