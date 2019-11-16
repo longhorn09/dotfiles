@@ -24,6 +24,8 @@ sudo apt install npm -y
 sudo npm config set init-author-email "norman@normstorm.com" -g
 sudo npm config set init-author-name "Norman Tang" -g
 sudo npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
+sudo npm set editor vim  
+# sudo npm set editor code # for vscode
 
 # setup python 
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget -y
@@ -72,6 +74,8 @@ sudo apt install tmux -y # terminal multiplexer
 
 # needed for Slack chatbot dev
 sudo snap install ngrok  # ngrok - https tunneling thru localhost
+
+sudo apt install neofetch -y    # for basic system stats
 
 # final refresh and cleanup
 sudo apt-get upgrade -y

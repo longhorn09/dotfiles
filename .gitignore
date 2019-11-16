@@ -9,3 +9,4 @@ npm-debug.log
 *.csv
 *.xls*
 settings.json
+*.tmp

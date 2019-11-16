@@ -123,3 +123,4 @@ LS_COLORS=$LS_COLORS:'di=0;96:' ; export LS_COLORS
 export EDITOR='vim'
 export GOPATH=/home/ntang/go
 export GOBIN=${GOPATH}/bin
+#export PATH="$PATH":~/_]/node_modules/.bin   # https://stackoverflow.com/questions/21211340/how-to-fix-yo-command-not-found-after-installing-yeoman
