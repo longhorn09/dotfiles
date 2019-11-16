@@ -39,6 +39,7 @@ sudo apt install materia-gtk-theme -y
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt-get update -y && sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
+sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
 
 sudo apt install net-tools -y # needed for netstat -tulpn
 
