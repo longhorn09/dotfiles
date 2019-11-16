@@ -58,9 +58,9 @@ sudo apt install httpie -y
 pip install httpie-edgegrid  # better to git clone the source repo and  build than do this: https://github.com/akamai/httpie-edgegrid
 
 # virtualbox installation - note: you'll likely need to reboot to be able to run virtualbox
-sudo apt install virtualbox-dkms -y
-sudo apt-get install virtualbox -y
-sudo apt install virtualbox-ext-pack -y
+#sudo apt install virtualbox-dkms -y
+#sudo apt-get install virtualbox -y
+#sudo apt install virtualbox-ext-pack -y
 
 # setting list-view as default for nemo file manager (Budgie specific)
 # org : nemo : preferences : default-folder-viewer
