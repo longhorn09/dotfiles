@@ -78,5 +78,6 @@ sudo snap install ngrok  # ngrok - https tunneling thru localhost
 sudo apt install neofetch -y    # for basic system stats
 
 # final refresh and cleanup
+sudo apt dist-upgrade -y
 sudo apt-get upgrade -y
 sudo apt autoremove -y
