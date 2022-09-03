@@ -21,3 +21,7 @@ set expandtab        " spaces instead of tabs
 set shiftwidth=2     " number of space characters used for indentation
 set smarttab
 set cindent
+" use this for gvim settings
+if has("gui_running")
+  set lines=40 columns=140
+endif
