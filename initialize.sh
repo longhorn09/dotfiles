@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo timedatectl set-timezone America/New_York
 sudo apt-get update -y
 
 # install vim
