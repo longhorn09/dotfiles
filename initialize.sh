@@ -17,7 +17,7 @@ cp ~/configuration/doupdate.sh ~/
 chmod u+x ~/doupdate.sh
 
 # setup node 
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install nodejs -y
 sudo apt install npm -y
 
@@ -80,7 +80,8 @@ sudo apt install neofetch -y    # for basic system stats
 
 # install java
 sudo apt install default-jdk -y
-
+sudo apt install zip unzip
+curl -s https://get.sdkman.io | bash
 # final refresh and cleanup
 sudo apt dist-upgrade -y
 sudo apt-get upgrade -y
