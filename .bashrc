@@ -123,4 +123,8 @@ LS_COLORS=$LS_COLORS:'di=0;96:' ; export LS_COLORS
 export EDITOR='vim'
 export GOPATH=/home/ntang/go
 export GOBIN=${GOPATH}/bin
+export KOTLIN_HOME="$HOME/.sdkman/candidates/kotlin/1.8.0"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH=$PATH:$KOTLIN_HOME/bin
 #export PATH="$PATH":~/_]/node_modules/.bin   # https://stackoverflow.com/questions/21211340/how-to-fix-yo-command-not-found-after-installing-yeoman
