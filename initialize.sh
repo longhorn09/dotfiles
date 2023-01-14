@@ -58,11 +58,6 @@ pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-pyt
 sudo apt install httpie -y
 pip install httpie-edgegrid  # better to git clone the source repo and  build than do this: https://github.com/akamai/httpie-edgegrid
 
-# virtualbox installation - note: you'll likely need to reboot to be able to run virtualbox
-#sudo apt install virtualbox-dkms -y
-#sudo apt-get install virtualbox -y
-#sudo apt install virtualbox-ext-pack -y
-
 # setting list-view as default for nemo file manager (Budgie specific)
 # org : nemo : preferences : default-folder-viewer
 sudo apt-get install dconf-editor -y
@@ -82,6 +77,7 @@ sudo apt install neofetch -y    # for basic system stats
 sudo apt install default-jdk -y
 sudo apt install zip unzip
 curl -s https://get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 # final refresh and cleanup
 sudo apt dist-upgrade -y
 sudo apt-get upgrade -y
