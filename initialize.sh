@@ -74,7 +74,8 @@ sudo snap install ngrok  # ngrok - https tunneling thru localhost
 sudo apt install neofetch -y    # for basic system stats
 
 # install java
-sudo apt install default-jdk -y
+#sudo apt install default-jdk -y
+sudo apt install openjdk-18-jdk
 sudo apt install zip unzip
 curl -s https://get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
