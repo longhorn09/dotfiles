@@ -81,6 +81,11 @@ sudo apt install zip unzip
 curl -s https://get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+#install gradle
+sudo add-apt-repository ppa:cwchien/gradle
+sudo apt-get update -y
+sudo apt-get install gradle -y
+
 # setup for gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
 sudo apt-get update -y && sudo apt-get upgrade -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
