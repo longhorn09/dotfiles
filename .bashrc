@@ -124,7 +124,9 @@ export EDITOR='vim'
 export GOPATH=/home/ntang/go
 export GOBIN=${GOPATH}/bin
 export KOTLIN_HOME="$HOME/.sdkman/candidates/kotlin/1.8.0"
+export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH=$PATH:$KOTLIN_HOME/bin
+export PATH=$PATH:$JAVA_HOME/bin
 #export PATH="$PATH":~/_]/node_modules/.bin   # https://stackoverflow.com/questions/21211340/how-to-fix-yo-command-not-found-after-installing-yeoman
