@@ -75,7 +75,8 @@ sudo apt install neofetch -y    # for basic system stats
 
 # install java
 #sudo apt install default-jdk -y
-sudo apt install openjdk-18-jdk
+# https://www.linuxcapable.com/how-to-install-openjdk-18-on-ubuntu-22-04-lts/
+sudo apt install openjdk-18-jdk -y
 sudo apt install zip unzip
 curl -s https://get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
