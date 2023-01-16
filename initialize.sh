@@ -85,6 +85,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sudo add-apt-repository ppa:cwchien/gradle
 sudo apt-get update -y
 sudo apt-get install gradle -y
+sdk install gradle 7.6
 
 # setup for gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
 sudo apt-get update -y && sudo apt-get upgrade -y
