@@ -71,6 +71,7 @@ sudo apt install tmux -y # terminal multiplexer
 # needed for Slack chatbot dev
 sudo snap install ngrok  # ngrok - https tunneling thru localhost
 
+# neofetch
 sudo apt install neofetch -y    # for basic system stats
 
 # install java
