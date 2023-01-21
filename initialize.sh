@@ -18,15 +18,25 @@ cp ~/configuration/doupdate.sh ~/
 chmod u+x ~/doupdate.sh
 
 # setup node 
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install nodejs -y
+#curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+#sudo apt-get install nodejs -y
 sudo apt install npm -y
+npm install -g npm@latest
+
+sudo apt install curl -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+source ~/.bashrc
+nvm install v19.4.0
+nvm use v19.4.0
 
 # npm initialization
 sudo npm config set init-author-email "norman@normstorm.com" -g
 sudo npm config set init-author-name "Norman Tang" -g
 sudo npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
 sudo npm set editor vim  
+npm config set fund false  # disable funding message during npm install, equiv: npm install --no-fund
 # sudo npm set editor code # for vscode
 
 # setup python 
@@ -47,17 +57,13 @@ sudo apt-get update -y && sudo apt install flatpak -y
 
 sudo apt install net-tools -y # needed for netstat -tulpn
 
-# WINE OPTIONAL 
-# sudo apt install wine64 -y # needed for windows emulation
-# sudo apt-get install winetricks -y
-
 # setup some python and akamai stuff
-# sudo apt-get install -y python-setuptools
 sudo apt-get install -y python3-setuptools
 sudo apt install python-pip -y
 pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-python
 sudo apt install httpie -y
-pip install httpie-edgegrid  # better to git clone the source repo and  build than do this: https://github.com/akamai/httpie-edgegrid
+pip install httpie-edgegrid  # https://github.com/akamai/httpie-edgegrid
+sudo apt install python3-pycurl -y
 
 # setting list-view as default for nemo file manager (Budgie specific)
 # org : nemo : preferences : default-folder-viewer
