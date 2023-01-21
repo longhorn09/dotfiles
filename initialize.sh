@@ -2,6 +2,7 @@
 sudo timedatectl set-timezone America/New_York
 sudo apt-get update -y
 
+sudo pro config set apt_news=false
 # install vim
 sudo apt install vim -y
 
@@ -33,7 +34,7 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update -y
-sudo apt install python3.8 -y
+sudo apt install python3.11 -y
 sudo apt install gnome-tweaks -y # need this for setting up right mouse click on laptop trackpad
 sudo snap install htop 
 sudo apt install materia-gtk-theme -y
@@ -41,8 +42,8 @@ sudo apt install materia-gtk-theme -y
 # install flatpak
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt-get update -y && sudo apt install flatpak -y
-sudo apt install gnome-software-plugin-flatpak -y
-sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
+# sudo apt install gnome-software-plugin-flatpak -y
+# sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
 
 sudo apt install net-tools -y # needed for netstat -tulpn
 
