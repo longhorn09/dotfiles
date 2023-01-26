@@ -108,3 +108,5 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 sudo apt dist-upgrade -y
 sudo apt-get upgrade -y
 sudo apt autoremove -y
+
+chmod u+x ./desktop.sh
