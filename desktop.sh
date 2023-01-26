@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # install mysql workbench
+# https://askubuntu.com/questions/1242026/cannot-connect-mysql-workbench-to-mysql-server
 sudo apt-get update -y
 snap install mysql-workbench-community -y
+sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
 
 # download chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
