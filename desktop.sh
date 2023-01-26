@@ -35,3 +35,6 @@ sudo apt install shutter -y
 # google cloud cli
 sudo snap install google-cloud-cli --classic
 
+# krita image editing 
+# sudo apt install krita -y
+sudo snap install krita
