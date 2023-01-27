@@ -27,13 +27,7 @@ if has("gui_running")
   set lines=40 columns=140
 endif
 
-
-"####################################################
-"# setup for 
-"####################################################
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'gmarik/Vundle.vim'
-"Plugin 'scrooloose/nerdtree'
-"call vundle#end()
-"filetype plugin indent on
+call plug#begin()
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
