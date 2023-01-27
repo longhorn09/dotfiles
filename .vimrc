@@ -10,7 +10,7 @@ syntax on
 set showmatch
 set incsearch
 "set hlsearch         "highlights the search
-set relativenumber    " set number, set relativenumber , set nonumber
+set number relativenumber    " hybrid relative number 
 set showcmd
 set ruler
 set ignorecase       "ignores case sensitive search 
