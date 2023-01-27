@@ -42,3 +42,4 @@ sudo snap install krita
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
 
+#git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim

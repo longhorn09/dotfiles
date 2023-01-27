@@ -2,6 +2,7 @@
 "* 20161031 - NT - initial creation
 "************************************
 set nocompatible
+filetype off
 "                     set background=dark
 colorscheme elflord   "color scheme with muted colors
 set term=ansi
@@ -25,3 +26,14 @@ set cindent
 if has("gui_running")
   set lines=40 columns=140
 endif
+
+
+"####################################################
+"# setup for 
+"####################################################
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'gmarik/Vundle.vim'
+"Plugin 'scrooloose/nerdtree'
+"call vundle#end()
+"filetype plugin indent on
