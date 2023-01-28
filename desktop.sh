@@ -28,7 +28,7 @@ sudo apt-get update -y
 sudo apt-get install gnome-screenshot -y
 
 # shutter screenshot tool
-sudo add-apt-repository universe
+sudo add-apt-repository universe -y
 sudo apt-get update -y
 sudo apt install shutter -y
 
@@ -43,3 +43,7 @@ sudo snap install krita
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
 
 #git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# notepad++
+sudo snap install notepad-plus-plus
+
