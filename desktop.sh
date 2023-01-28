@@ -45,5 +45,7 @@ sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thu
 #git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # notepad++
-sudo snap install notepad-plus-plus
-
+#sudo snap install notepad-plus-plus
+sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
+sudo apt-get update -y
+sudo apt-get install notepadqq -y
