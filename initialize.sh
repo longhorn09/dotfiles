@@ -42,7 +42,7 @@ npm config set fund false  # disable funding message during npm install, equiv: 
 # setup python 
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget -y
 sudo apt install software-properties-common -y
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt-get update -y
 sudo apt install python3.11 -y
 sudo apt install gnome-tweaks -y # need this for setting up right mouse click on laptop trackpad
@@ -50,7 +50,7 @@ sudo snap install htop
 sudo apt install materia-gtk-theme -y
 
 # install flatpak
-sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo add-apt-repository ppa:alexlarsson/flatpak -y
 sudo apt-get update -y && sudo apt install flatpak -y
 # sudo apt install gnome-software-plugin-flatpak -y
 # sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
@@ -93,7 +93,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install kotlin
 
 #install gradle
-sudo add-apt-repository ppa:cwchien/gradle
+sudo add-apt-repository ppa:cwchien/gradle -y
 sudo apt-get update -y
 sudo apt-get install gradle -y
 sdk install gradle 7.6
