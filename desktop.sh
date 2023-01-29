@@ -66,3 +66,6 @@ gsettings set org.nemo.preferences default-folder-viewer 'list-view'
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 sudo apt-get update -y
 sudo apt-get install -y appimagelauncher
+
+# discord
+sudo snap install discord
