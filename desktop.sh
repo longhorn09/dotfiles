@@ -57,3 +57,6 @@ sudo apt install intellij-idea-community -y
 
 # calculator
 sudo apt-get -y install gnome-calculator
+
+# default list view - nemo file manager for budgie
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'
