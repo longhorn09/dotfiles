@@ -41,7 +41,7 @@ sudo snap install krita
 
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
-
+sudo snap remove firefox
 #git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # notepad++
@@ -49,3 +49,11 @@ sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thu
 sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
 sudo apt-get update -y
 sudo apt-get install notepadqq -y
+
+# intellij
+sudo add-apt-repository ppa:mmk2410/intellij-idea -y
+sudo apt-get update -y
+sudo apt install intellij-idea-community -y
+
+# calculator
+sudo apt-get -y install gnome-calculator
