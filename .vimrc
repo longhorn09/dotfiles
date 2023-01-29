@@ -4,8 +4,15 @@
 set nocompatible
 filetype off
 "                     set background=dark
-colorscheme elflord   "color scheme with muted colors
+set encoding=utf-8
+" some servers have issues with backup files
+set nobackup
+set nowritebackup
+"colorscheme elflord   "color scheme with muted colors
 set term=ansi
+set updatetime=3000
+" always show signcolumn, otherwise could shift text during diagnostics
+set signcolumn=yes
 syntax on
 set showmatch
 set incsearch
@@ -30,4 +37,7 @@ endif
 call plug#begin()
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'morhetz/gruvbox'
+"Plugin for Javascript intellisense: https://github.com/neoclide/coc.nvim
+Plug 'neoclide/coc.nvim', {'branch':'release'}
 call plug#end()
