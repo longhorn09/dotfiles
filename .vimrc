@@ -6,6 +6,7 @@ filetype off
 "                     set background=dark
 set encoding=utf-8
 " some servers have issues with backup files
+set hidden
 set nobackup
 set nowritebackup
 "colorscheme elflord   "color scheme with muted colors
@@ -35,9 +36,25 @@ if has("gui_running")
 endif
 
 call plug#begin()
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'morhetz/gruvbox'
-"Plugin for Javascript intellisense: https://github.com/neoclide/coc.nvim
-Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'christoomey/vim-tmux-navigator'
+"Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" these setup the coc syntax highlights
+let g:coc_global_extensions = [
+      \'coc-snippets',
+     \'coc-pairs',
+     \'coc-tsserver',
+      \'coc-eslint',
+      \'coc-prettier',
+      \'coc-json',
+    \]
+
+colorscheme gruvbox
+nmap <C-n> :NERDTreeToggle<CR>
+set shortmess+=c  "don't give |ins-completion-menu|messages
