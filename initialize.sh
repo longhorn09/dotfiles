@@ -116,6 +116,9 @@ curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-di
 # mysql client
 sudo apt install mysql-client-core-8.0 -y
 
+# httpie
+sudo snap install httpie
+
 # copy dotfiles
 cp .vimrc ~/
 cp .bashrc ~/

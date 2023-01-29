@@ -60,3 +60,8 @@ sudo apt-get -y install gnome-calculator
 
 # default list view - nemo file manager for budgie
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'
+
+# install AppImageLauncher
+sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+sudo apt-get update -y
+sudo apt-get install -y appimagelauncher
