@@ -50,8 +50,8 @@ sudo snap install htop
 sudo apt install materia-gtk-theme -y
 
 # install flatpak
-sudo add-apt-repository ppa:alexlarsson/flatpak -y
-sudo apt-get update -y && sudo apt install flatpak -y
+#sudo add-apt-repository ppa:alexlarsson/flatpak -y
+#sudo apt-get update -y && sudo apt install flatpak -y
 # sudo apt install gnome-software-plugin-flatpak -y
 # sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
 
