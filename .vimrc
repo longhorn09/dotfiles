@@ -9,8 +9,7 @@ set encoding=utf-8
 set hidden
 set nobackup
 set nowritebackup
-"colorscheme elflord   "color scheme with muted colors
-set term=ansi
+"set term=ansi       "DO NOT HAVE set term=gui or it'll jackup color schemes
 set updatetime=3000
 " always show signcolumn, otherwise could shift text during diagnostics
 set signcolumn=yes
@@ -39,10 +38,12 @@ call plug#begin()
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'kaicataldo/material.vim', {'branch': 'main'}
+Plug 'dracula/vim'
+Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
-Plug 'christoomey/vim-tmux-navigator'
-"Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " these setup the coc syntax highlights
@@ -55,6 +56,16 @@ let g:coc_global_extensions = [
       \'coc-json',
     \]
 
-colorscheme gruvbox
 nmap <C-n> :NERDTreeToggle<CR>
 set shortmess+=c  "don't give |ins-completion-menu|messages
+
+
+let g:material_terminal_italics=1
+let g:material_theme_style = 'default'
+"colorscheme material
+colorscheme gruvbox-material
+
+
+if (has('termguicolors'))
+  set termguicolors
+endif

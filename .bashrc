@@ -130,3 +130,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH=$PATH:$KOTLIN_HOME/bin
 export PATH=$PATH:$JAVA_HOME/bin
 #export PATH="$PATH":~/_]/node_modules/.bin   # https://stackoverflow.com/questions/21211340/how-to-fix-yo-command-not-found-after-installing-yeoman
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias tmux="TERM=screen-256color-bce tmux"
