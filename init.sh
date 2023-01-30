@@ -123,6 +123,8 @@ sudo snap install httpie
 cp .vimrc ~/
 cp .bashrc ~/
 cp .inputrc ~/
+cp .tmux.conf ~/
 source ~/.vimrc
 source ~/.bashrc
 source ~/.inputrc
+
