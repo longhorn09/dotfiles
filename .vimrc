@@ -39,8 +39,6 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kaicataldo/material.vim', {'branch': 'main'}
-Plug 'dracula/vim'
-Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/gruvbox-material'
@@ -61,10 +59,10 @@ set shortmess+=c  "don't give |ins-completion-menu|messages
 
 
 let g:material_terminal_italics=1
-let g:material_theme_style = 'default'
-"colorscheme material
-colorscheme gruvbox-material
-
+"let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+let g:material_theme_style = 'darker' 
+"colorscheme gruvbox-material
+colorscheme material
 
 if (has('termguicolors'))
   set termguicolors
