@@ -69,3 +69,6 @@ sudo apt-get install -y appimagelauncher
 
 # discord
 sudo snap install discord
+
+# slack
+sudo snap install slack
