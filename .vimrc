@@ -4,7 +4,7 @@
 set nocompatible
 filetype off
 "                     set background=dark
-set encoding=utf-8
+set encoding=UTF-8
 " some servers have issues with backup files
 set hidden
 set nobackup
@@ -39,16 +39,25 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kaicataldo/material.vim', {'branch': 'main'}
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/gruvbox-material'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " these setup the coc syntax highlights
+"     \'coc-pairs',
+let g:NERDTreeIgnore = ['node_modules$']
+
 let g:coc_global_extensions = [
       \'coc-snippets',
-     \'coc-pairs',
-     \'coc-tsserver',
+      \'coc-tsserver',
       \'coc-eslint',
       \'coc-prettier',
       \'coc-json',
@@ -57,6 +66,7 @@ let g:coc_global_extensions = [
 nmap <C-n> :NERDTreeToggle<CR>
 set shortmess+=c  "don't give |ins-completion-menu|messages
 
+"let g:airline#extensions#tabline#enabled = 1
 
 let g:material_terminal_italics=1
 "let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
@@ -67,3 +77,10 @@ colorscheme material
 if (has('termguicolors'))
   set termguicolors
 endif
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_symbols.dirty='⚡'

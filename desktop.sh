@@ -72,3 +72,8 @@ sudo snap install discord
 
 # slack
 sudo snap install slack
+
+# install nerd-fonts
+#git clone git@github.com:ryanoasis/nerd-fonts.git
+#chmod u+x nerd-fonts/install.sh
+
