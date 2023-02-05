@@ -4,7 +4,6 @@
 set nocompatible
 filetype off
 "                     set background=dark
-set encoding=UTF-8
 " some servers have issues with backup files
 set hidden
 set nobackup
@@ -36,16 +35,17 @@ endif
 
 call plug#begin()
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kaicataldo/material.vim', {'branch': 'main'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/gruvbox-material'
-Plug 'vim-airline/vim-airline'
+Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'altercation/vim-colors-solarized'
@@ -84,3 +84,8 @@ endif
 
 " powerline symbols
 let g:airline_symbols.dirty='⚡'
+inoremap jk <esc>
+inoremap <esc> <nop>
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+set encoding=utf-8
+let g:airline_powerline_fonts = 1

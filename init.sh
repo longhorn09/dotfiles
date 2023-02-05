@@ -128,3 +128,4 @@ source ~/.vimrc
 source ~/.bashrc
 source ~/.inputrc
 
+sudo apt-get install fonts-powerline
