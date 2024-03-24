@@ -85,7 +85,7 @@ endif
 " powerline symbols
 let g:airline_symbols.dirty='⚡'
 inoremap jk <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
