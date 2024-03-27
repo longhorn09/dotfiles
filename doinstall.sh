@@ -6,3 +6,4 @@ sudo snap install google-cloud-cli --classic
 sudo apt-get install google-chrome-stable -y
 sudo snap install discord
 sudo snap install gimp
+sudo snap install gnome-calculator
