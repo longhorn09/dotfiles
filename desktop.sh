@@ -7,9 +7,9 @@ sudo snap install mysql-workbench-community
 # this allows saving of passwords in mysql workbench
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
 
-# download chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
+# download chrome - comment out - do via snap install instead
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#sudo apt install ./google-chrome-stable_current_amd64.deb -y
 
 # VSCode
 sudo apt install software-properties-common apt-transport-https wget -y
