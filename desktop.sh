@@ -49,12 +49,13 @@ sudo snap remove firefox
 #sudo snap install notepad-plus-plus
 sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
 sudo apt-get update -y
-sudo apt-get install notepadqq -y
+#sudo apt-get install notepadqq -y
+sudo snap install --classic notepadqq
 
 # intellij
-sudo add-apt-repository ppa:mmk2410/intellij-idea -y
-sudo apt-get update -y
-sudo apt install intellij-idea-community -y
+#sudo add-apt-repository ppa:mmk2410/intellij-idea -y
+#sudo apt-get update -y
+#sudo apt install intellij-idea-community -y
 
 # calculator
 sudo apt-get -y install gnome-calculator
