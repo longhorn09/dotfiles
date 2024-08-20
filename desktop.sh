@@ -15,13 +15,11 @@ sudo snap connect mysql-workbench-community:password-manager-service :password-m
 sudo apt install software-properties-common apt-transport-https wget -y
 #wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
-#sudo apt install code -y
 sudo snap install --classic code
 
 # Android studio
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 sudo apt-get update -y && sudo apt-get upgrade -y
-#sudo apt install android-studio -y
 sudo snap install android-studio --classic
 
 # gnome screenshot
@@ -49,7 +47,6 @@ sudo snap remove firefox
 #sudo snap install notepad-plus-plus
 sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
 sudo apt-get update -y
-#sudo apt-get install notepadqq -y
 sudo snap install --classic notepadqq
 
 # intellij
