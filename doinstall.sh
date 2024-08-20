@@ -8,8 +8,11 @@ sudo snap install discord
 sudo snap install gimp
 sudo snap install gnome-calculator
 sudo snap install slack
+sudo apt-get -y install dconf-editor
 
-# need this to customize login screen background
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+# needngs i this to customize login screen background
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 sudo apt update -y
 sudo apt install gdm-settings libglid2.0-dev-bin
