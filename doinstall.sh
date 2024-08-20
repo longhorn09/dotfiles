@@ -14,4 +14,4 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt --fix-broken install
 
 # virtualbox
-sudo apt install virtualbox virtualbox-ext-pack virtualbox-qt -y
+sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
