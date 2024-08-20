@@ -69,7 +69,7 @@ sudo apt-get install -y appimagelauncher
 #sudo snap install discord
 
 # slack
-sudo snap install slack
+#sudo snap install slack
 
 # install nerd-fonts
 #git clone git@github.com:ryanoasis/nerd-fonts.git

@@ -7,7 +7,12 @@ sudo snap install google-cloud-cli --classic
 sudo snap install discord
 sudo snap install gimp
 sudo snap install gnome-calculator
+sudo snap install slack
 
+# need this to customize login screen background
+sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
+sudo apt update -y
+sudo apt install gdm-settings libglid2.0-dev-bin
 # google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
