@@ -45,8 +45,8 @@ sudo snap remove firefox
 
 # notepad++
 #sudo snap install notepad-plus-plus
-sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
-sudo apt-get update -y
+#sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
+#sudo apt-get update -y
 sudo snap install --classic notepadqq
 
 # intellij
