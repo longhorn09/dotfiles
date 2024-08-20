@@ -47,7 +47,7 @@ sudo snap remove firefox
 #sudo snap install notepad-plus-plus
 #sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
 #sudo apt-get update -y
-sudo snap install --classic notepadqq
+#sudo snap install --classic notepadqq
 
 # intellij
 #sudo add-apt-repository ppa:mmk2410/intellij-idea -y
@@ -66,7 +66,7 @@ sudo apt-get update -y
 sudo apt-get install -y appimagelauncher
 
 # discord
-sudo snap install discord
+#sudo snap install discord
 
 # slack
 sudo snap install slack
