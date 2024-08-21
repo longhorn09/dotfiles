@@ -35,5 +35,7 @@ sudo apt --fix-broken install
 # virtualbox
 # https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
 # https://www.youtube.com/watch?v=mBRbC-XyQKg
-sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+# https://download.virtualbox.org/virtualbox/7.0.20/ 
+sudo apt install virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+#sudo apt install virtualbox
 sudo apt install build-essential dkms linux-headers-$(uname -r) -y
