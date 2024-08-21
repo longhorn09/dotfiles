@@ -15,7 +15,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 # needngs i this to customize login screen background
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 sudo apt update -y
-sudo apt install gdm-settings libglid2.0-dev-bin
+sudo apt install gdm-settings libglib2.0-dev-bin
 
 sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 
