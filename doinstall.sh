@@ -16,6 +16,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 sudo apt update -y
 sudo apt install gdm-settings libglid2.0-dev-bin
+
+sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
+
 # google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
