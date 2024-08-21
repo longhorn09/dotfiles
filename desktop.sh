@@ -36,7 +36,7 @@ sudo snap install google-cloud-cli --classic
 
 # krita image editing 
 # sudo apt install krita -y
-sudo snap install krita
+#sudo snap install krita
 
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y

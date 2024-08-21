@@ -5,11 +5,12 @@ sudo snap install code
 sudo snap install google-cloud-cli --classic
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
-sudo snap install gimp
+#sudo snap install gimp
 sudo snap install gnome-calculator
 sudo snap install slack
-sudo snap install libreoffice
+#sudo snap install libreoffice
 sudo apt-get -y install dconf-editor
+sudo snap install pinta # image editing
 
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
@@ -33,5 +34,6 @@ sudo apt --fix-broken install
 
 # virtualbox
 # https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
+# https://www.youtube.com/watch?v=mBRbC-XyQKg
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
-
+sudo apt install build-essential dkms linux-headers-$(uname -r) -y
