@@ -19,6 +19,12 @@ sudo apt install gdm-settings libglib2.0-dev-bin
 
 sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 
+# need for synology assistant
+sudo apt install nfs-common -y
+
+# need for hp printer drivers
+sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
+
 # google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
