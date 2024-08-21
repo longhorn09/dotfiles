@@ -8,6 +8,7 @@ sudo snap install discord
 sudo snap install gimp
 sudo snap install gnome-calculator
 sudo snap install slack
+sudo snap install libreoffice
 sudo apt-get -y install dconf-editor
 
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
