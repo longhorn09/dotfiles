@@ -15,3 +15,8 @@ For basic desktop software, run
 To really get `vim` going properly, you'll want to run the following in VIM
 
 ```:PlugInstall```
+
+### Stow
+
+For automatic symlinks run  
+```stow .```
