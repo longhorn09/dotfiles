@@ -9,6 +9,7 @@ sudo snap install discord
 sudo snap install gnome-calculator
 sudo snap install slack
 #sudo snap install libreoffice
+sudo snap install tree
 sudo apt-get -y install dconf-editor
 sudo snap install pinta # image editing
 
