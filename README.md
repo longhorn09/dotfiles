@@ -7,13 +7,12 @@ Basic linux environment configuration preferences
 
 ### Desktop install scripts
 
-For basic desktop software, run
+For basic desktop software, run  
 ```./desktop.sh```
 
 ### VIM setup
 
-To really get `vim` going properly, you'll want to run the following in VIM
-
+To really get `vim` going properly, you'll want to run the following in VIM  
 ```:PlugInstall```
 
 ### Stow
