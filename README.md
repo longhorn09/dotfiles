@@ -13,4 +13,5 @@ For basic desktop software, run
 ### VIM setup
 
 To really get `vim` going properly, you'll want to run the following in VIM
+
 ```:PlugInstall```
