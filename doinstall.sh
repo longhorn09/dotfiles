@@ -24,6 +24,7 @@ sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 # need for synology assistant
 sudo apt install nfs-common -y
 
+sudo apt install stow -y
 # need for hp printer drivers
 sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
 
