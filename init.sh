@@ -11,11 +11,11 @@ git config --global user.email "norman@normstorm.com"
 git config --global user.name "Norman Tang"
 
 # setup basic config preferences 
-cp ~/configuration/.vimrc ~/
-cp ~/configuration/.bashrc ~/
-cp ~/configuration/.inputrc ~/
-cp ~/configuration/doupdate.sh ~/
-chmod u+x ~/doupdate.sh
+#cp ~/configuration/.vimrc ~/
+#cp ~/configuration/.bashrc ~/
+#cp ~/configuration/.inputrc ~/
+#cp ~/configuration/doupdate.sh ~/
+chmod u+x ~/dotfiles/doupdate.sh
 
 # setup node 
 #curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
