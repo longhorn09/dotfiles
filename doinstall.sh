@@ -1,11 +1,22 @@
 #!/bin/bash
+
+# repos
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
+sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
+
 sudo apt-get update -y
+
+# VSCode
+sudo apt install software-properties-common apt-transport-https wget -y
+#wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+
+
 sudo snap install --classic notepadqq 
 sudo snap install code
 sudo snap install google-cloud-cli --classic
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
-#sudo snap install gimp
 sudo snap install gnome-calculator
 sudo snap install slack
 #sudo snap install libreoffice
@@ -16,7 +27,6 @@ sudo snap install pinta # image editing
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 # needngs i this to customize login screen background
-sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 sudo apt update -y
 sudo apt install gdm-settings libglib2.0-dev-bin
 
@@ -41,3 +51,23 @@ sudo apt --fix-broken install
 sudo apt install virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
 #sudo apt install virtualbox
 sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+
+# uninstall stuff
+sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
+sudo snap remove firefox
+
+# default list view - nemo file manager for budgie
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'
+
+# install AppImageLauncher
+sudo apt-get install -y appimagelauncher
+
+# gnome screenshot
+sudo apt-get install gnome-screenshot -y
+
+# mysql workbench
+sudo snap install mysql-workbench-community 
+sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
+
+# default list view - nemo file manager for budgie - not as relevant for gnome
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'
