@@ -22,7 +22,8 @@ sudo snap install slack
 #sudo snap install libreoffice
 sudo snap install tree
 sudo apt-get -y install dconf-editor
-sudo snap install pinta # image editing
+sudo snap install pinta # basic image editor like paint
+sudo snap install okular # PDF viewer
 
 # needngs i this to customize login screen background
 sudo apt update -y
