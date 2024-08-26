@@ -24,18 +24,12 @@ sudo snap install tree
 sudo apt-get -y install dconf-editor
 sudo snap install pinta # image editing
 
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 # needngs i this to customize login screen background
 sudo apt update -y
 sudo apt install gdm-settings libglib2.0-dev-bin
 
 sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 
-# need for synology assistant
-sudo apt install nfs-common -y
-
-sudo apt install stow -y
 # need for hp printer drivers
 sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
 
@@ -56,18 +50,16 @@ sudo apt install build-essential dkms linux-headers-$(uname -r) -y
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
 sudo snap remove firefox
 
-# default list view - nemo file manager for budgie
-gsettings set org.nemo.preferences default-folder-viewer 'list-view'
+# list view default for both budgie and gnome
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'    # nemo for budgie
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view' # nautilus for gnome
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
-# install AppImageLauncher
-sudo apt-get install -y appimagelauncher
-
-# gnome screenshot
-sudo apt-get install gnome-screenshot -y
+# install AppImageLauncher and gnome-screenshot
+# nfs-common needed for synology assistant
+sudo apt-get install appimagelauncher gnome-screenshot nfs-common stow -y
 
 # mysql workbench
 sudo snap install mysql-workbench-community 
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
-
-# default list view - nemo file manager for budgie - not as relevant for gnome
-gsettings set org.nemo.preferences default-folder-viewer 'list-view'
