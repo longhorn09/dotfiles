@@ -64,3 +64,7 @@ sudo apt-get install appimagelauncher gnome-screenshot nfs-common stow -y
 # mysql workbench
 sudo snap install mysql-workbench-community 
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
+
+#sudo apt-add-repository universe
+
+sudo apt install golang -y
