@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 
 sudo apt-get update -y
-
+sudo snap install vlc
 # VSCode
 sudo apt install software-properties-common apt-transport-https wget -y
 #wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -68,3 +68,4 @@ sudo snap connect mysql-workbench-community:password-manager-service :password-m
 #sudo apt-add-repository universe
 
 sudo apt install golang -y
+sudo snap install simple-scan
