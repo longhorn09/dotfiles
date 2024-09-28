@@ -61,7 +61,6 @@ sudo apt install net-tools -y # needed for netstat -tulpn
 sudo apt-get install -y python3-setuptools
 sudo apt install python-pip -y
 pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-python
-sudo apt install httpie -y
 pip install httpie-edgegrid  # https://github.com/akamai/httpie-edgegrid
 sudo apt install python3-pycurl -y
 
@@ -93,10 +92,10 @@ sudo apt install zip unzip -y
 #sdk install kotlin
 
 #install gradle
-sudo add-apt-repository ppa:cwchien/gradle -y
-sudo apt-get update -y
-sudo apt-get install gradle -y
-sdk install gradle 7.6
+#sudo add-apt-repository ppa:cwchien/gradle -y
+#sudo apt-get update -y
+#sudo apt-get install gradle -y
+#sdk install gradle 7.6
 
 # setup for gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
 sudo apt-get update -y && sudo apt-get upgrade -y
