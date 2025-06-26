@@ -24,12 +24,12 @@ sudo apt install npm -y
 npm install -g npm@latest
 
 sudo apt install curl -y
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source ~/.bashrc
-nvm install v19.5.0
-nvm use v19.5.0
+nvm install 24
+nvm use 24
 
 # npm initialization
 sudo npm config set init-author-email "norman@normstorm.com" -g
