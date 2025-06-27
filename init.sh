@@ -20,14 +20,15 @@ chmod u+x ~/dotfiles/doupdate.sh
 # setup node 
 #curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 #sudo apt-get install nodejs -y
-sudo apt install npm -y
-npm install -g npm@latest
+#sudo apt install npm -y
+#npm install -g npm@latest
 
 sudo apt install curl -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source ~/.bashrc
+nvm install-latest-npm
 nvm install 24
 nvm use 24
 
