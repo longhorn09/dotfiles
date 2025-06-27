@@ -29,6 +29,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 source ~/.bashrc
 nvm install-latest-npm
+nvm install lts/jod
 nvm install 24
 nvm use 24
 
