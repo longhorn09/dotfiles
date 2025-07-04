@@ -22,7 +22,8 @@ set ruler
 set ignorecase       "ignores case sensitive search 
 set smartcase        "will do case sensitivity search if search term has mixed case
 set cmdheight=2      "Better display for messages  , also needed for coc
-set visualbell       "gets rid of annoying beeps
+"set visualbell       "gets rid of annoying beeps
+set belloff=all      " this will disable all bell notifications, visual and audible
 set tabstop=2
 set expandtab        " spaces instead of tabs
 set shiftwidth=2     " number of space characters used for indentation
@@ -44,11 +45,13 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
+Plug 'sainnhe/sonokai'
 Plug 'sainnhe/gruvbox-material'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " these setup the coc syntax highlights
@@ -71,8 +74,10 @@ set shortmess+=c  "don't give |ins-completion-menu|messages
 let g:material_terminal_italics=1
 "let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'darker' 
+let g:sonokai_style = 'atlantis'  " 'atlantis' | 'default' | 'andromeda' | 'maia'
 "colorscheme gruvbox-material
-colorscheme material
+"colorscheme sonokai
+colorscheme codedark
 
 if (has('termguicolors'))
   set termguicolors
