@@ -32,6 +32,7 @@ nvm install-latest-npm
 nvm install lts/jod
 nvm install 24
 nvm use 24
+nvm alias default 24
 
 # npm initialization
 sudo npm config set init-author-email "norman@normstorm.com" -g
