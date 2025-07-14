@@ -68,6 +68,7 @@ sudo apt install python-pip -y
 pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-python
 pip install httpie-edgegrid  # https://github.com/akamai/httpie-edgegrid
 sudo apt install python3-pycurl -y
+touch ~/.hushlogin
 
 # setting list-view as default for nemo file manager (Budgie specific)
 # org : nemo : preferences : default-folder-viewer
