@@ -119,7 +119,7 @@ curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-di
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # mysql client
-sudo apt install mysql-client-core-8.0 -y
+#sudo apt install mysql-client-core-8.0 -y
 
 # httpie
 sudo snap install httpie
@@ -134,3 +134,4 @@ source ~/.bashrc
 source ~/.inputrc
 
 sudo apt-get install fonts-powerline
+sudo apt install libfuse2t64 -y   # need this for Cursor
