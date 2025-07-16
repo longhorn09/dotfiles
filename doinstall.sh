@@ -67,5 +67,5 @@ sudo snap connect mysql-workbench-community:password-manager-service :password-m
 
 #sudo apt-add-repository universe
 
-sudo apt install golang -y
+#sudo apt install golang -y
 sudo snap install simple-scan
