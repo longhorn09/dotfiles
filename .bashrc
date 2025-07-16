@@ -136,3 +136,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias tmux="TERM=screen-256color-bce tmux"
 alias cursor='~/Applications/cursor.AppImage --no-sandbox'
+export GOOGLE_CLOUD_PROJECT="edgar-data-prd"
