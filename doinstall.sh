@@ -12,7 +12,9 @@ sudo apt install software-properties-common apt-transport-https wget -y
 #wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 
 
-sudo snap install --classic notepadqq 
+#sudo snap install notepadqq 
+sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
+sudo apt install notepadqq -y
 sudo snap install code
 sudo snap install google-cloud-cli --classic
 #sudo apt-get install google-chrome-stable -y
