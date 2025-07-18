@@ -68,6 +68,6 @@ sudo snap install mysql-workbench-community
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
 
 #sudo apt-add-repository universe
-
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y # needed for some gfx libraries
 #sudo apt install golang -y
 sudo snap install simple-scan
