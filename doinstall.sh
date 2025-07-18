@@ -71,3 +71,6 @@ sudo snap connect mysql-workbench-community:password-manager-service :password-m
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y # needed for some gfx libraries
 #sudo apt install golang -y
 sudo snap install simple-scan
+
+wget https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb
+sudo dpkg -i ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
