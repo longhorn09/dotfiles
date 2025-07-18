@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get update -y
+
 # repos
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y
@@ -74,3 +76,4 @@ sudo snap install simple-scan
 
 wget https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb
 sudo dpkg -i ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
+sudo apt-get install -f
