@@ -58,6 +58,7 @@ sudo snap remove firefox
 # list view default for both budgie and gnome
 gsettings set org.nemo.preferences default-folder-viewer 'list-view'    # nemo for budgie
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view' # nautilus for gnome
+gsettings set org.gnome.nautilus.list-view use-tree-view false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
