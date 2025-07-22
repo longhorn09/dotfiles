@@ -138,5 +138,5 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias cursor='~/.local/bin/cursor.AppImage --no-sandbox'
 alias dadroit='~/.local/bin/DadroitJSONViewer.AppImage'
 export GOOGLE_CLOUD_PROJECT="edgar-data-prd"
-alias fshot="xdotool exec flameshot gui"
+#alias fshot="xdotool exec flameshot gui"
 
