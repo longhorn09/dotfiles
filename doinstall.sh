@@ -78,3 +78,5 @@ sudo snap install simple-scan
 wget https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb
 sudo dpkg -i ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
 sudo apt-get install -f
+sudo apt install xdotool -y
+sudo apt install flameshot -y   # https://github.com/flameshot-org/flameshot/issues/3712#issuecomment-2334966021
