@@ -89,7 +89,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lhat'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -138,5 +138,4 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias cursor='~/.local/bin/cursor.AppImage --no-sandbox'
 alias dadroit='~/.local/bin/DadroitJSONViewer.AppImage'
 export GOOGLE_CLOUD_PROJECT="edgar-data-prd"
-#alias fshot="xdotool exec flameshot gui"
-
+alias fd=fdfind # for regex searching

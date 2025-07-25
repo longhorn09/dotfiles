@@ -135,3 +135,5 @@ source ~/.inputrc
 
 sudo apt-get install fonts-powerline
 sudo apt install libfuse2t64 -y   # need this for Cursor
+sudo apt install ncdu -y
+sudo apt install fd-find -y
