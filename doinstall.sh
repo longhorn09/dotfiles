@@ -38,6 +38,7 @@ sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 
 # need for hp printer drivers
 sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
+sudo apt install hplip-gui -y
 
 # google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
