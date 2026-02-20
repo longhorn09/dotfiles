@@ -84,7 +84,10 @@ sudo apt install tmux -y # terminal multiplexer
 sudo snap install ngrok  # ngrok - https tunneling thru localhost
 
 # neofetch --> fastfetch
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update -y
 sudo apt install fastfetch -y    # for basic system stats
+
 
 # install java
 #sudo apt install default-jdk -y
