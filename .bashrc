@@ -139,3 +139,4 @@ alias cursor='~/.local/bin/cursor.AppImage --no-sandbox'
 alias dadroit='~/.local/bin/DadroitJSONViewer.AppImage'
 export GOOGLE_CLOUD_PROJECT="edgar-data-prd"
 alias fd=fdfind # for regex searching
+fastfetch
