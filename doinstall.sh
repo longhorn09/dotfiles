@@ -50,9 +50,8 @@ sudo apt --fix-broken install
 # https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
 # https://www.youtube.com/watch?v=mBRbC-XyQKg
 # https://download.virtualbox.org/virtualbox/7.0.20/ 
-sudo apt install virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
-#sudo apt install virtualbox
-sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+# sudo apt install virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+# sudo apt install build-essential dkms linux-headers-$(uname -r) -y
 
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
