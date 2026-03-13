@@ -63,6 +63,7 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view' #
 gsettings set org.gnome.nautilus.list-view use-tree-view false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.desktop.notifications show-banners false
 
 # install AppImageLauncher and gnome-screenshot
 # nfs-common needed for synology assistant
