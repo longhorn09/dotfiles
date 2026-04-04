@@ -47,7 +47,7 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt-get update -y
-sudo apt install python3.13 -y
+sudo apt install python3.14 -y
 #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
 #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.13 2  # higher priority 2
 sudo apt install gnome-tweaks -y # need this for setting up right mouse click on laptop trackpad
