@@ -141,3 +141,5 @@ sudo apt install libfuse2t64 -y   # need this for Cursor
 sudo apt install ncdu -y
 sudo apt install fd-find -y
 sudo apt install zoxide -y
+
+sudo add-apt-repository ppa:cappelikan/ppa -y
