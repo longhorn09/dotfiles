@@ -83,6 +83,8 @@ sudo apt install tmux -y # terminal multiplexer
 # needed for Slack chatbot dev
 sudo snap install ngrok  # ngrok - https tunneling thru localhost
 
+# linux kernel
+sudo add-apt-repository ppa:cappelikan/ppa -y
 # neofetch --> fastfetch
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo apt update -y
@@ -142,4 +144,3 @@ sudo apt install ncdu -y
 sudo apt install fd-find -y
 sudo apt install zoxide -y
 
-sudo add-apt-repository ppa:cappelikan/ppa -y
