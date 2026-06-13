@@ -17,12 +17,6 @@ git config --global user.name "Norman Tang"
 #cp ~/configuration/doupdate.sh ~/
 chmod u+x ~/dotfiles/doupdate.sh
 
-# setup node 
-#curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-#sudo apt-get install nodejs -y
-#sudo apt install npm -y
-#npm install -g npm@latest
-
 sudo apt install curl -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -85,28 +79,15 @@ sudo snap install ngrok  # ngrok - https tunneling thru localhost
 
 # linux kernel
 sudo add-apt-repository ppa:cappelikan/ppa -y
-# neofetch --> fastfetch
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo apt update -y
 sudo apt install fastfetch -y    # for basic system stats
 
 
 # install java
-#sudo apt install default-jdk -y
 # https://www.linuxcapable.com/how-to-install-openjdk-18-on-ubuntu-22-04-lts/
 sudo apt install default-jdk -y
 sudo apt install zip unzip -y
-
-# sdkman setup
-#curl -s https://get.sdkman.io | bash
-#source "$HOME/.sdkman/bin/sdkman-init.sh"
-#sdk install kotlin
-
-#install gradle
-#sudo add-apt-repository ppa:cwchien/gradle -y
-#sudo apt-get update -y
-#sudo apt-get install gradle -y
-#sdk install gradle 7.6
 
 # setup for gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
 sudo apt-get update -y && sudo apt-get upgrade -y
@@ -122,9 +103,6 @@ sudo apt autoremove -y
 chmod u+x ./desktop.sh
 curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# mysql client
-#sudo apt install mysql-client-core-8.0 -y
 
 # httpie
 sudo snap install httpie
