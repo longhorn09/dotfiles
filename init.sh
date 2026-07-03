@@ -24,9 +24,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source ~/.bashrc
 nvm install-latest-npm
 nvm install lts/krypton
-nvm install v26.1.0
+nvm install v26.4.0
 #nvm use 24
-nvm alias default 26.1.0
+nvm alias default 26.4.0
 
 # npm initialization
 sudo npm config set init-author-email "norman@normstorm.com" -g
