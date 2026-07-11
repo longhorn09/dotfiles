@@ -118,3 +118,5 @@ rm "$INSTALLER_PATH"
 # sudo hp-setup -i 192.168.1.xxx
 sudo apt install intel-gpu-tools -y
 sudo apt install nvtop -y
+
+sudo snap install notepadnext --classic
