@@ -100,3 +100,18 @@ curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
   sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
 echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | \
   sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
+
+#########################################################
+# Installation for IBKR desktop
+#########################################################
+BASE_URL="https://download.interactivebrokers.com/installers/ntws/latest-standalone"
+INSTALLER_NAME="ntws-latest-standalone-linux-x64.sh"
+DOWNLOAD_DIR="$HOME/Downloads"
+INSTALLER_PATH="$DOWNLOAD_DIR/$INSTALLER_NAME"
+mkdir -p "$DOWNLOAD_DIR"
+curl -fL -# -o "$INSTALLER_PATH" "$BASE_URL/$INSTALLER_NAME"
+chmod +x "$INSTALLER_PATH"
+"$INSTALLER_PATH" -q
+rm "$INSTALLER_PATH"
+#
+# sudo hp-setup -i 192.168.1.xxx
