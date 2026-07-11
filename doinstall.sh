@@ -39,6 +39,7 @@ sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 # need for hp printer drivers
 sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
 sudo apt install hplip-gui -y
+sudo apt install libsane-hpaio sane-utils -y      # scanner drivers
 # run hp-setup
 
 # google chrome
@@ -115,3 +116,5 @@ chmod +x "$INSTALLER_PATH"
 rm "$INSTALLER_PATH"
 #
 # sudo hp-setup -i 192.168.1.xxx
+sudo apt install intel-gpu-tools -y
+sudo apt install nvtop -y
