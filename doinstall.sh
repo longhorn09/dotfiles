@@ -120,3 +120,4 @@ sudo apt install intel-gpu-tools -y
 sudo apt install nvtop -y
 
 sudo snap install notepadnext --classic
+gsettings set org.gnome.desktop.wm.keybindings maximize-vertical "['<Super><Shift>Up']"
