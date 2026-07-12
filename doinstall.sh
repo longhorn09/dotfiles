@@ -150,3 +150,6 @@ StartupWMClass=Cursor
 EOF
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
 update-desktop-database "$APP_DIR"
+
+
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Console.desktop']/ ")"
