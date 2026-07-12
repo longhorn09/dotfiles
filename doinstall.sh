@@ -113,6 +113,7 @@ mkdir -p "$DOWNLOAD_DIR"
 curl -fL -# -o "$INSTALLER_PATH" "$BASE_URL/$INSTALLER_NAME"
 chmod +x "$INSTALLER_PATH"
 "$INSTALLER_PATH" -q
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'install4j_ntws.desktop']/ ")"
 rm "$INSTALLER_PATH"
 #
 # sudo hp-setup -i 192.168.1.xxx
@@ -145,4 +146,5 @@ Categories=Development;TextEditor;
 Comment=AI-powered code editor
 StartupWMClass=Cursor
 EOF
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
 update-desktop-database "$APP_DIR"
