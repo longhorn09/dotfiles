@@ -147,6 +147,9 @@ EOF
 ###################################################
 # pin to dock shortcuts
 ###################################################
+cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/
+# need to edit the Exec line
+# Exec=env QT_QPA_PLATFORM=xcb /snap/bin/notepadnext %f
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Console.desktop']/ ")"
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, '1password.desktop']/ ")"
