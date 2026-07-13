@@ -18,7 +18,7 @@ sudo snap install 1password
 sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
 #sudo apt install notepadqq -y
 sudo snap install gedit
-sudo snap install code --classic
+#sudo snap install code --classic
 sudo snap install google-cloud-cli --classic
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
@@ -33,7 +33,6 @@ sudo snap install okular # PDF viewer
 # needngs i this to customize login screen background
 sudo apt update -y
 sudo apt install gdm-settings libglib2.0-dev-bin -y
-
 sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
 
 # need for hp printer drivers
