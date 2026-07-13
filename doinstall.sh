@@ -93,7 +93,6 @@ curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sud
 sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --batch --yes --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 sudo apt update -y && sudo apt install 1password -y
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, '1password.desktop']/ ")"
 
 # Antigravity install
 sudo mkdir -p /etc/apt/keyrings
@@ -113,7 +112,6 @@ mkdir -p "$DOWNLOAD_DIR"
 curl -fL -# -o "$INSTALLER_PATH" "$BASE_URL/$INSTALLER_NAME"
 chmod +x "$INSTALLER_PATH"
 "$INSTALLER_PATH" -q
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'install4j_ntws.desktop']/ ")"
 rm "$INSTALLER_PATH"
 #
 # sudo hp-setup -i 192.168.1.xxx
@@ -121,7 +119,6 @@ sudo apt install intel-gpu-tools -y
 sudo apt install nvtop -y
 
 sudo snap install notepadnext --classic
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'notepadnext_notepadnext.desktop']/ ")"
 gsettings set org.gnome.desktop.wm.keybindings maximize-vertical "['<Super><Shift>Up']"
 
 ##########################################################
@@ -147,8 +144,13 @@ Categories=Development;TextEditor;
 Comment=AI-powered code editor
 StartupWMClass=Cursor
 EOF
+###################################################
+# pin to dock shortcuts
+###################################################
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Console.desktop']/ ")"
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, '1password.desktop']/ ")"
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'notepadnext_notepadnext.desktop']/ ")"
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'install4j_ntws.desktop']/ ")"
 update-desktop-database "$APP_DIR"
 
-# pin Bash terminal to dock
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Console.desktop']/ ")"
