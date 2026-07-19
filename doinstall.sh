@@ -6,8 +6,10 @@ sudo apt-get update -y
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
+sudo add-apt-repository ppa:hepp3n/cosmic-epoch -y
 
 sudo apt-get update -y
+sudo apt install language-pack-zh-hant ibus-libpinyin ibus-chewing
 sudo snap install vlc
 # VSCode
 sudo apt install software-properties-common apt-transport-https wget -y
