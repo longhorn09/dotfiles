@@ -46,10 +46,19 @@ sudo apt --fix-broken install
 # virtualbox
 sudo add-apt-repository multiverse -y
 sudo apt update -y
-sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
-sudo usermod -aG vboxusers $USER
+#sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+#sudo usermod -aG vboxusers $USER
 # path: /usr/share/virtualbox/VBoxGuestAdditions.iso
 # You can manually attach it by going to VM Settings > Storage > click the CD Icon > Choose/Create a Disk Image... and browsing to that path.
+
+# gnome system monitor
+sudo apt install -y gnome-system-monitor && python3 -c "
+import subprocess, ast, os
+app_id = 'org.gnome.SystemMonitor.desktop' if os.path.exists('/usr/share/applications/org.gnome.SystemMonitor.desktop') else 'gnome-system-monitor.desktop'
+curr = ast.literal_eval(subprocess.check_output(['gsettings', 'get', 'org.gnome.shell', 'favorite-apps']).decode().strip())
+if app_id not in curr:
+    curr.append(app_id)
+    subprocess.run(['gsettings', 'set', 'org.gnome.shell', 'favorite-apps', str(curr)])"
 
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
