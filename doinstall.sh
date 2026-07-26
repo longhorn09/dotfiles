@@ -48,12 +48,8 @@ sudo add-apt-repository multiverse -y
 sudo apt update -y
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
 sudo usermod -aG vboxusers $USER
-#
-# https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
-# https://www.youtube.com/watch?v=mBRbC-XyQKg
-# https://download.virtualbox.org/virtualbox/7.0.20/ 
-# sudo apt install virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
-# sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+# path: /usr/share/virtualbox/VBoxGuestAdditions.iso
+# You can manually attach it by going to VM Settings > Storage > click the CD Icon > Choose/Create a Disk Image... and browsing to that path.
 
 # uninstall stuff
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
