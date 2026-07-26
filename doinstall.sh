@@ -4,7 +4,7 @@ sudo apt-get update -y
 
 # repos
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
-sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+#sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
 sudo add-apt-repository ppa:hepp3n/cosmic-epoch -y
 
@@ -16,11 +16,6 @@ sudo apt install software-properties-common apt-transport-https wget -y
 #wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 
 sudo snap install 1password
-#sudo snap install notepadqq 
-sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
-#sudo apt install notepadqq -y
-#sudo snap install gedit
-#sudo snap install code --classic
 sudo snap install google-cloud-cli --classic
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
@@ -29,7 +24,7 @@ sudo snap install slack
 #sudo snap install libreoffice
 sudo snap install tree
 sudo apt-get -y install dconf-editor
-sudo snap install pinta # basic image editor like paint
+#sudo snap install pinta # basic image editor like paint
 sudo snap install okular # PDF viewer
 
 # needngs i this to customize login screen background
@@ -49,6 +44,8 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt --fix-broken install
 
 # virtualbox
+sudo add-apt-repository multiverse -y
+sudo apt update -y
 # https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
 # https://www.youtube.com/watch?v=mBRbC-XyQKg
 # https://download.virtualbox.org/virtualbox/7.0.20/ 
@@ -84,7 +81,7 @@ wget https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LIN
 sudo dpkg -i ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
 sudo apt-get install -f
 sudo apt install xdotool -y
-sudo apt install flameshot -y   # https://github.com/flameshot-org/flameshot/issues/3712#issuecomment-2334966021
+#sudo apt install flameshot -y   # https://github.com/flameshot-org/flameshot/issues/3712#issuecomment-2334966021
 # make a shortcut with : sh -c "QT_QPA_PLATFORM=wayland flameshot gui"
 
 # 1Password install
@@ -119,7 +116,6 @@ rm "$INSTALLER_PATH"
 # sudo hp-setup -i 192.168.1.xxx
 sudo apt install intel-gpu-tools -y
 sudo apt install nvtop -y
-
 sudo snap install notepadnext --classic
 gsettings set org.gnome.desktop.wm.keybindings maximize-vertical "['<Super><Shift>Up']"
 
