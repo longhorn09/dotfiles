@@ -46,6 +46,9 @@ sudo apt --fix-broken install
 # virtualbox
 sudo add-apt-repository multiverse -y
 sudo apt update -y
+sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+sudo usermod -aG vboxusers $USER
+#
 # https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm
 # https://www.youtube.com/watch?v=mBRbC-XyQKg
 # https://download.virtualbox.org/virtualbox/7.0.20/ 
