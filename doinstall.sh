@@ -154,6 +154,7 @@ EOF
 # pin to dock shortcuts
 ###################################################
 cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/
+cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/
 # need to edit the Exec line
 # Exec=env QT_QPA_PLATFORM=xcb /snap/bin/notepadnext %f
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
@@ -162,5 +163,7 @@ gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell fav
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'notepadnext_notepadnext.desktop']/ ")"
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'install4j_ntws.desktop']/ ")"
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'google-chrome.desktop']/ ")"
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'mysql-workbench-community_mysql-workbench-community.desktop']/ ")"
 update-desktop-database "$APP_DIR"
+
 
