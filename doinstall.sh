@@ -161,22 +161,37 @@ cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench
 cp /var/lib/snapd/desktop/applications/beekeeper-studio_beekeeper-studio.desktop ~/.local/share/applications/ 2>/dev/null || true
 
 ###################################################
-# Set GNOME favorites explicitly
+# Safely append all dock shortcuts using Python
 ###################################################
-FAVORITES=(
-    "'cursor.desktop'"
-    "'org.gnome.Console.desktop'"
-    "'1password.desktop'"
-    "'notepadnext_notepadnext.desktop'"
-    "'install4j_ntws.desktop'"
-    "'google-chrome.desktop'"
-    "'mysql-workbench-community_mysql-workbench-community.desktop'"
-    "'beekeeper-studio_beekeeper-studio.desktop'"
-)
+python3 -c "
+import subprocess, ast
 
-# Join array into GNOME string format: ['app1', 'app2', 'app3']
-FAV_STRING="[$(IFS=, ; echo "${FAVORITES[*]}")]"
+# Define all apps you want pinned to the dock
+desired_apps = [
+    'cursor.desktop',
+    'org.gnome.Console.desktop',
+    '1password.desktop',
+    'notepadnext_notepadnext.desktop',
+    'install4j_ntws.desktop',
+    'google-chrome.desktop',
+    'mysql-workbench-community_mysql-workbench-community.desktop',
+    'beekeeper-studio_beekeeper-studio.desktop'
+]
 
-gsettings set org.gnome.shell favorite-apps "$FAV_STRING"
+# Fetch current pinned apps
+raw_apps = subprocess.check_output(['gsettings', 'get', 'org.gnome.shell', 'favorite-apps']).decode().strip()
+curr_apps = ast.literal_eval(raw_apps)
+
+# Append only apps that are not already pinned
+updated = False
+for app in desired_apps:
+    if app not in curr_apps:
+        curr_apps.append(app)
+        updated = True
+
+# Update gsettings only if changes were made
+if updated:
+    subprocess.run(['gsettings', 'set', 'org.gnome.shell', 'favorite-apps', str(curr_apps)])
+"
+
 update-desktop-database "$HOME/.local/share/applications"
-
