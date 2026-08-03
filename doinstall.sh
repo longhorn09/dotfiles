@@ -26,7 +26,7 @@ sudo snap install tree
 sudo apt-get -y install dconf-editor
 #sudo snap install pinta # basic image editor like paint
 sudo snap install okular # PDF viewer
-
+sudo snap install beekeeper-studio # SQL client based on Electron
 # needngs i this to customize login screen background
 sudo apt update -y
 sudo apt install gdm-settings libglib2.0-dev-bin -y
@@ -150,20 +150,33 @@ Categories=Development;TextEditor;
 Comment=AI-powered code editor
 StartupWMClass=Cursor
 EOF
-###################################################
-# pin to dock shortcuts
-###################################################
-cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/
-cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/
-# need to edit the Exec line
-# Exec=env QT_QPA_PLATFORM=xcb /snap/bin/notepadnext %f
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'cursor.desktop']/ ") "
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'org.gnome.Console.desktop']/ ")"
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, '1password.desktop']/ ")"
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'notepadnext_notepadnext.desktop']/ ")"
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'install4j_ntws.desktop']/ ")"
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'google-chrome.desktop']/ ")"
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed "s/]/, 'mysql-workbench-community_mysql-workbench-community.desktop']/ ")"
-update-desktop-database "$APP_DIR"
 
+###################################################
+# Copy desktop entries for Snap apps
+###################################################
+mkdir -p ~/.local/share/applications
+
+cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/ 2>/dev/null || true
+cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/ 2>/dev/null || true
+cp /var/lib/snapd/desktop/applications/beekeeper-studio_beekeeper-studio.desktop ~/.local/share/applications/ 2>/dev/null || true
+
+###################################################
+# Set GNOME favorites explicitly
+###################################################
+FAVORITES=(
+    "'cursor.desktop'"
+    "'org.gnome.Console.desktop'"
+    "'1password.desktop'"
+    "'notepadnext_notepadnext.desktop'"
+    "'install4j_ntws.desktop'"
+    "'google-chrome.desktop'"
+    "'mysql-workbench-community_mysql-workbench-community.desktop'"
+    "'beekeeper-studio_beekeeper-studio.desktop'"
+)
+
+# Join array into GNOME string format: ['app1', 'app2', 'app3']
+FAV_STRING="[$(IFS=, ; echo "${FAVORITES[*]}")]"
+
+gsettings set org.gnome.shell favorite-apps "$FAV_STRING"
+update-desktop-database "$HOME/.local/share/applications"
 
