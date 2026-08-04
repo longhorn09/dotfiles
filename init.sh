@@ -28,6 +28,7 @@ nvm install v26.4.0
 #nvm use 24
 nvm alias default 26.4.0
 
+sudo apt install ppa-purge -y
 # npm initialization
 sudo npm config set init-author-email "norman@normstorm.com" -g
 sudo npm config set init-author-name "Norman Tang" -g

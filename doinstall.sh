@@ -17,6 +17,8 @@ sudo apt install software-properties-common apt-transport-https wget -y
 
 sudo snap install 1password
 sudo snap install google-cloud-cli --classic
+sudo apt install postgresql-client-common -y
+
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
 sudo snap install gnome-calculator
@@ -26,7 +28,12 @@ sudo snap install tree
 sudo apt-get -y install dconf-editor
 #sudo snap install pinta # basic image editor like paint
 sudo snap install okular # PDF viewer
-sudo snap install beekeeper-studio # SQL client based on Electron
+#sudo snap install beekeeper-studio # SQL client based on Electron
+sudo snap install dbeaver-ce --classic
+sudo snap install pgadmin4
+sudo snap connect pgadmin4:home
+sudo snap connect pgadmin4:password-manager-service
+
 # needngs i this to customize login screen background
 sudo apt update -y
 sudo apt install gdm-settings libglib2.0-dev-bin -y
