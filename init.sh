@@ -24,9 +24,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source ~/.bashrc
 nvm install-latest-npm
 nvm install lts/krypton
-nvm install v26.4.0
-#nvm use 24
-nvm alias default 26.4.0
+nvm install 26
+nvm alias default 26.7.0
 nvm install-latest-npm
 
 sudo apt install ppa-purge -y
