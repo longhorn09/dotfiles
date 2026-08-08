@@ -17,7 +17,6 @@ sudo apt install software-properties-common apt-transport-https wget -y
 
 sudo snap install 1password
 sudo snap install google-cloud-cli --classic
-sudo apt install postgresql-client-common -y
 
 #sudo apt-get install google-chrome-stable -y
 sudo snap install discord
@@ -28,7 +27,8 @@ sudo snap install tree
 sudo apt-get -y install dconf-editor
 #sudo snap install pinta # basic image editor like paint
 sudo snap install okular # PDF viewer
-#sudo snap install beekeeper-studio # SQL client based on Electron
+
+sudo apt install postgresql-client-common -y
 sudo snap install dbeaver-ce --classic
 sudo snap install pgadmin4
 sudo snap connect pgadmin4:home
@@ -150,13 +150,14 @@ curl -L "https://www.cursor.com/brand/icon.svg" -o "$ICON_DIR/cursor-icon.svg"
 cat <<EOF > "$APP_DIR/cursor.desktop"
 [Desktop Entry]
 Name=Cursor
-Exec=$INSTALL_DIR/cursor.appimage --no-sandbox
+Exec=$HOME/.local/bin/cursor.appimage --no-sandbox --open-url %u
 Terminal=false
 Type=Application
 Icon=$ICON_DIR/cursor-icon.svg
 Categories=Development;TextEditor;
 Comment=AI-powered code editor
 StartupWMClass=Cursor
+MimeType=x-scheme-handler/cursor;
 EOF
 
 ###################################################
@@ -165,8 +166,8 @@ EOF
 mkdir -p ~/.local/share/applications
 
 cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/ 2>/dev/null || true
-cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/ 2>/dev/null || true
-cp /var/lib/snapd/desktop/applications/beekeeper-studio_beekeeper-studio.desktop ~/.local/share/applications/ 2>/dev/null || true
+#cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/ 2>/dev/null || true
+#cp /var/lib/snapd/desktop/applications/beekeeper-studio_beekeeper-studio.desktop ~/.local/share/applications/ 2>/dev/null || true
 
 ###################################################
 # Safely append all dock shortcuts using Python
@@ -181,9 +182,7 @@ desired_apps = [
     '1password.desktop',
     'notepadnext_notepadnext.desktop',
     'install4j_ntws.desktop',
-    'google-chrome.desktop',
-    'mysql-workbench-community_mysql-workbench-community.desktop',
-    'beekeeper-studio_beekeeper-studio.desktop'
+    'google-chrome.desktop'
 ]
 
 # Fetch current pinned apps
