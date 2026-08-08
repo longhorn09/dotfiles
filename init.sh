@@ -27,13 +27,14 @@ nvm install lts/krypton
 nvm install v26.4.0
 #nvm use 24
 nvm alias default 26.4.0
+nvm install-latest-npm
 
 sudo apt install ppa-purge -y
 # npm initialization
-sudo npm config set init-author-email "norman@normstorm.com" -g
-sudo npm config set init-author-name "Norman Tang" -g
-sudo npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
-sudo npm set editor vim  
+npm config set init-author-email "norman@normstorm.com" -g
+npm config set init-author-name "Norman Tang" -g
+npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
+npm set editor vim  
 npm config set fund false  # disable funding message during npm install, equiv: npm install --no-fund
 # sudo npm set editor code # for vscode
 
@@ -59,9 +60,11 @@ sudo apt install net-tools -y # needed for netstat -tulpn
 
 # setup some python and akamai stuff
 sudo apt-get install -y python3-setuptools
-sudo apt install python-pip -y
-pip install edgegrid-python  # https://github.com/akamai/AkamaiOPEN-edgegrid-python
-pip install httpie-edgegrid  # https://github.com/akamai/httpie-edgegrid
+sudo apt install python3-pip -y
+sudo apt install pipx -y
+pipx ensurepath
+pipx install httpie
+pipx inject httpie httpie-edgegrid edgegrid-python
 sudo apt install python3-pycurl -y
 touch ~/.hushlogin
 
