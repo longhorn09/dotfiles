@@ -29,7 +29,7 @@ sudo apt-get -y install dconf-editor
 sudo snap install okular # PDF viewer
 
 sudo apt install postgresql-client-common -y
-sudo snap install dbeaver-ce --classic
+#sudo snap install dbeaver-ce --classic
 sudo snap install pgadmin4
 sudo snap connect pgadmin4:home
 sudo snap connect pgadmin4:password-manager-service
@@ -83,9 +83,9 @@ gsettings set org.gnome.desktop.notifications show-banners false
 # nfs-common needed for synology assistant
 sudo apt-get install appimagelauncher gnome-screenshot nfs-common stow -y
 
-# mysql workbench
-sudo snap install mysql-workbench-community 
-sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
+# mysql workbench - commented out because i use postgres on neondb more now
+#sudo snap install mysql-workbench-community 
+#sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
 
 #sudo apt-add-repository universe
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y # needed for some gfx libraries
