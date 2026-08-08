@@ -35,6 +35,7 @@ npm config set init-author-name "Norman Tang" -g
 npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
 npm set editor vim  
 npm config set fund false  # disable funding message during npm install, equiv: npm install --no-fund
+npm install -g forever
 # sudo npm set editor code # for vscode
 
 # setup python 
