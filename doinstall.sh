@@ -36,7 +36,7 @@ sudo apt install postgresql-client -y
 curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
 sudo apt update -y
-sudo apt install pgadmin4 -y
+sudo apt install pgadmin4-desktop -y
 
 # needngs i this to customize login screen background
 sudo apt update -y
@@ -186,7 +186,8 @@ desired_apps = [
     '1password.desktop',
     'notepadnext_notepadnext.desktop',
     'install4j_ntws.desktop',
-    'google-chrome.desktop'
+    'google-chrome.desktop',
+    'pgadmin4.desktop'
 ]
 
 # Fetch current pinned apps
