@@ -116,6 +116,7 @@ cp .vimrc ~/
 cp .bashrc ~/
 cp .inputrc ~/
 cp .tmux.conf ~/
+cp .psqlrc ~/
 source ~/.vimrc
 source ~/.bashrc
 source ~/.inputrc

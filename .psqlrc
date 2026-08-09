@@ -1,0 +1,55 @@
+-- -----------------------------------------------------------------------------
+-- 1. General Preferences & Query Behavior
+-- -----------------------------------------------------------------------------
+
+-- Automatically switch to vertical/expanded display when query output is wider than screen
+\pset null '¤'
+
+-- Display NULL values visibly instead of blank spaces
+\pset null '[NULL]'
+
+-- Show query execution duration for every statement
+\timing on
+
+-- Do not show annoying startup/welcome text when launching psql
+\set QUIET 1
+
+-- Keep interactive session alive when paste/execution encounters an error
+\set ON_ERROR_ROLLBACK interactive
+
+-- Highlight history search and prevent duplicate consecutive commands in history
+\set HISTCONTROL ignoredups
+
+-- Increase history size (default is 500)
+--\set HISTSIZE 5000
+
+-- Auto-complete SQL keywords in UPPERCASE when hitting TAB
+\set COMP_KEYWORD_CASE upper
+
+
+-- -----------------------------------------------------------------------------
+-- 2. Customized Prompt Appearance
+-- -----------------------------------------------------------------------------
+
+-- Show database name, username, and active transaction indicator in the prompt
+-- %M = host, %/ = database, %n = user, %# = '#' for superuser / '>' for normal
+-- %x = '*' if inside an uncommitted transaction block
+\set PROMPT1 '%[%033[1;32m%][%M %/%]%[%033[0m%] %n%#%x '
+\set PROMPT2 '%[%033[1;32m%][%M %/%]%[%033[0m%] %n%#%x '
+
+-- Turn QUIET back off so SQL statements in normal usage work as expected
+\set QUIET 0
+
+
+-- -----------------------------------------------------------------------------
+-- 3. Useful Custom Shortcuts (Aliases)
+-- -----------------------------------------------------------------------------
+
+-- Custom shortcut: Type ':table_sizes' to list 10 largest tables by disk usage
+\set table_sizes 'SELECT relname AS "Table", pg_size_pretty(pg_total_relation_size(c.oid)) AS "Size" FROM pg_class c LEFT JOIN pg_namespace n ON (n.oid = c.relnamespace) WHERE n.nspname NOT IN (\'pg_catalog\', \'information_schema\') AND c.relkind = \'r\' ORDER BY pg_total_relation_size(c.oid) DESC LIMIT 10;'
+
+-- Custom shortcut: Type ':locks' to see active locks in the database
+\set locks 'SELECT pid, locktype, mode, granted FROM pg_locks;'
+
+-- Custom shortcut: Type ':active_queries' to see running queries
+\set active_queries 'SELECT pid, now() - query_start AS duration, query, state FROM pg_stat_activity WHERE state != \'idle\' ORDER BY duration DESC;'
