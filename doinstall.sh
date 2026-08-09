@@ -28,11 +28,15 @@ sudo apt-get -y install dconf-editor
 #sudo snap install pinta # basic image editor like paint
 sudo snap install okular # PDF viewer
 
-sudo apt install postgresql-client-common -y
+sudo apt install postgresql-client -y
 #sudo snap install dbeaver-ce --classic
-sudo snap install pgadmin4
-sudo snap connect pgadmin4:home
-sudo snap connect pgadmin4:password-manager-service
+#sudo snap install pgadmin4
+#sudo snap connect pgadmin4:home
+#sudo snap connect pgadmin4:password-manager-service
+curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
+sudo apt update -y
+sudo apt install pgadmin4 -y
 
 # needngs i this to customize login screen background
 sudo apt update -y
