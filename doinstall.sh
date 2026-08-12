@@ -1,118 +1,38 @@
 #!/bin/bash
 
-sudo apt-get update -y
+export DEBIAN_FRONTEND=noninteractive
 
-# repos
+#########################################################
+# 1. Bootstrap tools needed to add repos
+#########################################################
+sudo apt-get update -y
+sudo apt-get install -y software-properties-common apt-transport-https wget curl gnupg ca-certificates jq
+
+#########################################################
+# 2. Add all third-party repos / keys (no apt update yet)
+#########################################################
+# VSCode (repo only; install commented historically)
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
-#sudo add-apt-repository ppa:appimagelauncher-team/stable -y
-sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings
-sudo add-apt-repository ppa:hepp3n/cosmic-epoch -y
-
-sudo apt-get update -y
-sudo apt install language-pack-zh-hant ibus-libpinyin ibus-chewing
-sudo snap install vlc
-# VSCode
-sudo apt install software-properties-common apt-transport-https wget -y
 #wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-
-sudo snap install 1password
-sudo snap install google-cloud-cli --classic
-
-#sudo apt-get install google-chrome-stable -y
-sudo snap install discord
-sudo snap install gnome-calculator
-sudo snap install slack
-#sudo snap install libreoffice
-sudo snap install tree
-sudo apt-get -y install dconf-editor
-#sudo snap install pinta # basic image editor like paint
-sudo snap install okular # PDF viewer
-
-sudo apt install postgresql-client -y
-#sudo snap install dbeaver-ce --classic
-#sudo snap install pgadmin4
-#sudo snap connect pgadmin4:home
-#sudo snap connect pgadmin4:password-manager-service
-curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
-sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
-sudo apt update -y
-sudo apt install pgadmin4-desktop -y
-
-# needngs i this to customize login screen background
-sudo apt update -y
-sudo apt install gdm-settings libglib2.0-dev-bin -y
-sudo apt install gnome-shell-extensions gnome-shell-extension-manager -y
-
-# need for hp printer drivers
-sudo apt-get install libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip -y
-sudo apt install hplip-gui -y
-sudo apt install libsane-hpaio sane-utils -y      # scanner drivers
-# run hp-setup
-
-# google chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt --fix-broken install
-
-# virtualbox
+#sudo add-apt-repository ppa:appimagelauncher-team/stable -y
+sudo add-apt-repository ppa:ubuntuhandbook1/gdm-settings -y
+sudo add-apt-repository ppa:hepp3n/cosmic-epoch -y
 sudo add-apt-repository multiverse -y
-sudo apt update -y
-#sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
-#sudo usermod -aG vboxusers $USER
-# path: /usr/share/virtualbox/VBoxGuestAdditions.iso
-# You can manually attach it by going to VM Settings > Storage > click the CD Icon > Choose/Create a Disk Image... and browsing to that path.
+#sudo apt-add-repository universe -y
 
-# gnome system monitor
-sudo apt install -y gnome-system-monitor && python3 -c "
-import subprocess, ast, os
-app_id = 'org.gnome.SystemMonitor.desktop' if os.path.exists('/usr/share/applications/org.gnome.SystemMonitor.desktop') else 'gnome-system-monitor.desktop'
-curr = ast.literal_eval(subprocess.check_output(['gsettings', 'get', 'org.gnome.shell', 'favorite-apps']).decode().strip())
-if app_id not in curr:
-    curr.append(app_id)
-    subprocess.run(['gsettings', 'set', 'org.gnome.shell', 'favorite-apps', str(curr)])"
+# pgAdmin
+curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor --batch --yes -o /usr/share/keyrings/packages-pgadmin-org.gpg
+sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
 
-# uninstall stuff
-sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
-sudo snap remove firefox
-
-# list view default for both budgie and gnome
-gsettings set org.nemo.preferences default-folder-viewer 'list-view'    # nemo for budgie
-gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view' # nautilus for gnome
-gsettings set org.gnome.nautilus.list-view use-tree-view false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.desktop.notifications show-banners false
-
-# install AppImageLauncher and gnome-screenshot
-# nfs-common needed for synology assistant
-sudo apt-get install appimagelauncher gnome-screenshot nfs-common stow -y
-
-# mysql workbench - commented out because i use postgres on neondb more now
-#sudo snap install mysql-workbench-community 
-#sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
-
-#sudo apt-add-repository universe
-sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y # needed for some gfx libraries
-#sudo apt install golang -y
-sudo snap install simple-scan
-
-wget https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb
-sudo dpkg -i ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
-sudo apt-get install -f
-sudo apt install xdotool -y
-#sudo apt install flameshot -y   # https://github.com/flameshot-org/flameshot/issues/3712#issuecomment-2334966021
-# make a shortcut with : sh -c "QT_QPA_PLATFORM=wayland flameshot gui"
-
-# 1Password install
+# 1Password
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --batch --yes --output /usr/share/keyrings/1password-archive-keyring.gpg
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
 sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
 curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
 sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --batch --yes --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
-sudo apt update -y && sudo apt install 1password -y
 
-# Antigravity install
+# Antigravity
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
   sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
@@ -120,7 +40,78 @@ echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-cent
   sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
 
 #########################################################
-# Installation for IBKR desktop
+# 3. Single apt update after all repos are configured
+#########################################################
+sudo apt-get update -y
+
+#########################################################
+# 4. All apt packages in one pass
+#########################################################
+sudo apt-get install -y \
+  language-pack-zh-hant ibus-libpinyin ibus-chewing \
+  dconf-editor \
+  postgresql-client pgadmin4-desktop pgloader \
+  gdm-settings libglib2.0-dev-bin \
+  gnome-shell-extensions gnome-shell-extension-manager \
+  libjpeg-dev libtool libtool-bin libcups2-dev libsnmp-dev libusb-1.0-0-dev hplip \
+  hplip-gui \
+  libsane-hpaio sane-utils \
+  gnome-system-monitor \
+  appimagelauncher gnome-screenshot nfs-common stow \
+  libcanberra-gtk-module libcanberra-gtk3-module \
+  xdotool \
+  1password \
+  intel-gpu-tools \
+  nvtop \
+  libfuse2t64
+  #sudo apt install golang -y
+  #sudo apt install flameshot -y   # https://github.com/flameshot-org/flameshot/issues/3712#issuecomment-2334966021
+  # make a shortcut with : sh -c "QT_QPA_PLATFORM=wayland flameshot gui"
+  #sudo apt install virtualbox virtualbox-ext-pack virtualbox-dkms virtualbox-qt virtualbox-guest-additions-iso -y
+  #sudo usermod -aG vboxusers $USER
+  # path: /usr/share/virtualbox/VBoxGuestAdditions.iso
+  # You can manually attach it by going to VM Settings > Storage > click the CD Icon > Choose/Create a Disk Image... and browsing to that path.
+
+# uninstall stuff
+sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
+
+#########################################################
+# 5. Direct .deb installs (uses already-updated indexes)
+#########################################################
+# google chrome
+#sudo apt-get install google-chrome-stable -y
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+# peazip
+wget -q https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb
+sudo apt-get install -y ./peazip_10.5.0.LINUX.GTK2-1_amd64.deb
+
+#########################################################
+# 6. Snaps
+#########################################################
+sudo snap install vlc
+sudo snap install google-cloud-cli --classic
+sudo snap install discord
+sudo snap install gnome-calculator
+sudo snap install slack
+#sudo snap install libreoffice
+sudo snap install tree
+#sudo snap install pinta # basic image editor like paint
+sudo snap install okular # PDF viewer
+#sudo snap install dbeaver-ce --classic
+#sudo snap install pgadmin4
+#sudo snap connect pgadmin4:home
+#sudo snap connect pgadmin4:password-manager-service
+# mysql workbench - commented out because i use postgres on neondb more now
+#sudo snap install mysql-workbench-community
+#sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service # this allows saving of passwords in mysql workbench
+sudo snap install simple-scan
+sudo snap install notepadnext --classic
+sudo snap remove --purge firefox
+
+#########################################################
+# 7. IBKR desktop
 #########################################################
 BASE_URL="https://download.interactivebrokers.com/installers/ntws/latest-standalone"
 INSTALLER_NAME="ntws-latest-standalone-linux-x64.sh"
@@ -131,21 +122,14 @@ curl -fL -# -o "$INSTALLER_PATH" "$BASE_URL/$INSTALLER_NAME"
 chmod +x "$INSTALLER_PATH"
 "$INSTALLER_PATH" -q
 rm "$INSTALLER_PATH"
-#
 # sudo hp-setup -i 192.168.1.xxx
-sudo apt install intel-gpu-tools -y
-sudo apt install nvtop -y
-sudo snap install notepadnext --classic
-sudo apt install pgloader -y
-gsettings set org.gnome.desktop.wm.keybindings maximize-vertical "['<Super><Shift>Up']"
 
-##########################################################
-# install cursor
-##########################################################
+#########################################################
+# 8. Cursor
+#########################################################
 INSTALL_DIR="$HOME/.local/bin"
 ICON_DIR="$HOME/.local/share/icons"
 APP_DIR="$HOME/.local/share/applications"
-sudo apt update && sudo apt install -y libfuse2t64 wget curl jq
 mkdir -p "$INSTALL_DIR" "$ICON_DIR" "$APP_DIR"
 CURSOR_URL=$(curl -fsSL "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable" | jq -r '.downloadUrl')
 curl -L "$CURSOR_URL" -o "$INSTALL_DIR/cursor.appimage"
@@ -164,22 +148,26 @@ StartupWMClass=Cursor
 MimeType=x-scheme-handler/cursor;
 EOF
 
-###################################################
-# Copy desktop entries for Snap apps
-###################################################
+#########################################################
+# 9. Desktop entries, gsettings, dock pins
+#########################################################
 mkdir -p ~/.local/share/applications
-
 cp /var/lib/snapd/desktop/applications/notepadnext_notepadnext.desktop ~/.local/share/applications/ 2>/dev/null || true
 #cp /var/lib/snapd/desktop/applications/mysql-workbench-community_mysql-workbench-community.desktop ~/.local/share/applications/ 2>/dev/null || true
 #cp /var/lib/snapd/desktop/applications/beekeeper-studio_beekeeper-studio.desktop ~/.local/share/applications/ 2>/dev/null || true
 
-###################################################
-# Safely append all dock shortcuts using Python
-###################################################
-python3 -c "
-import subprocess, ast
+# list view default for both budgie and gnome
+gsettings set org.nemo.preferences default-folder-viewer 'list-view'    # nemo for budgie
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view' # nautilus for gnome
+gsettings set org.gnome.nautilus.list-view use-tree-view false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.desktop.notifications show-banners false
+gsettings set org.gnome.desktop.wm.keybindings maximize-vertical "['<Super><Shift>Up']"
 
-# Define all apps you want pinned to the dock
+python3 -c "
+import subprocess, ast, os
+
 desired_apps = [
     'cursor.desktop',
     'org.gnome.Console.desktop',
@@ -190,18 +178,19 @@ desired_apps = [
     'pgadmin4.desktop'
 ]
 
-# Fetch current pinned apps
+app_id = 'org.gnome.SystemMonitor.desktop' if os.path.exists('/usr/share/applications/org.gnome.SystemMonitor.desktop') else 'gnome-system-monitor.desktop'
+if app_id not in desired_apps:
+    desired_apps.append(app_id)
+
 raw_apps = subprocess.check_output(['gsettings', 'get', 'org.gnome.shell', 'favorite-apps']).decode().strip()
 curr_apps = ast.literal_eval(raw_apps)
 
-# Append only apps that are not already pinned
 updated = False
 for app in desired_apps:
     if app not in curr_apps:
         curr_apps.append(app)
         updated = True
 
-# Update gsettings only if changes were made
 if updated:
     subprocess.run(['gsettings', 'set', 'org.gnome.shell', 'favorite-apps', str(curr_apps)])
 "
