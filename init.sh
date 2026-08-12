@@ -1,23 +1,81 @@
 #!/bin/bash
+
+export DEBIAN_FRONTEND=noninteractive
+
 sudo timedatectl set-timezone America/New_York
+sudo pro config set apt_news=false
+
+#########################################################
+# 1. Bootstrap tools needed to add repos
+#########################################################
+sudo apt-get update -y
+sudo apt-get install -y software-properties-common curl wget gnupg ca-certificates
+
+#########################################################
+# 2. Add all third-party repos / keys (no apt update yet)
+#########################################################
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo add-apt-repository ppa:cappelikan/ppa -y   # mainline kernel UI
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
+#sudo add-apt-repository ppa:alexlarsson/flatpak -y
+
+# gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list > /dev/null
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor --batch --yes -o /usr/share/keyrings/cloud.google.gpg
+
+#########################################################
+# 3. Single apt update after all repos are configured
+#########################################################
 sudo apt-get update -y
 
-sudo pro config set apt_news=false
-# install vim
-sudo apt install vim -y
+#########################################################
+# 4. All apt packages in one pass
+#########################################################
+sudo apt-get install -y \
+  vim \
+  ppa-purge \
+  build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev \
+  python3.14 \
+  gnome-tweaks \
+  materia-gtk-theme \
+  net-tools \
+  python3-setuptools python3-pip pipx python3-pycurl \
+  dconf-editor \
+  tmux \
+  fastfetch \
+  default-jdk \
+  zip unzip \
+  google-cloud-cli \
+  fonts-powerline \
+  libfuse2t64 \
+  ncdu \
+  fd-find \
+  zoxide
+  #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
+  #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.13 2  # higher priority 2
+  #sudo apt install flatpak -y
+  # sudo apt install gnome-software-plugin-flatpak -y
 
-# setup git
+#########################################################
+# 5. Final refresh and cleanup
+#########################################################
+sudo apt-get dist-upgrade -y
+sudo apt-get upgrade -y
+sudo apt-get autoremove -y
+
+#########################################################
+# 6. Git, dotfiles helpers, nvm / npm
+#########################################################
 git config --global user.email "norman@normstorm.com"
 git config --global user.name "Norman Tang"
 
-# setup basic config preferences 
+# setup basic config preferences
 #cp ~/configuration/.vimrc ~/
 #cp ~/configuration/.bashrc ~/
 #cp ~/configuration/.inputrc ~/
 #cp ~/configuration/doupdate.sh ~/
 chmod u+x ~/dotfiles/doupdate.sh
 
-sudo apt install curl -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -28,90 +86,40 @@ nvm install 26
 nvm alias default 26.7.0
 nvm install-latest-npm
 
-sudo apt install ppa-purge -y
 # npm initialization
 npm config set init-author-email "norman@normstorm.com" -g
 npm config set init-author-name "Norman Tang" -g
 npm config set init-author-url "https://www.linkedin.com/in/normstorm/" -g
-npm set editor vim  
+npm set editor vim
 npm config set fund false  # disable funding message during npm install, equiv: npm install --no-fund
 npm install -g forever
 # sudo npm set editor code # for vscode
 
-# setup python 
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget -y
-sudo apt install software-properties-common -y
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt-get update -y
-sudo apt install python3.14 -y
-#sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
-#sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.13 2  # higher priority 2
-sudo apt install gnome-tweaks -y # need this for setting up right mouse click on laptop trackpad
-sudo snap install htop 
-sudo apt install materia-gtk-theme -y
-
-# install flatpak
-#sudo add-apt-repository ppa:alexlarsson/flatpak -y
-#sudo apt-get update -y && sudo apt install flatpak -y
-# sudo apt install gnome-software-plugin-flatpak -y
-# sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
-
-sudo apt install net-tools -y # needed for netstat -tulpn
-
-# setup some python and akamai stuff
-sudo apt-get install -y python3-setuptools
-sudo apt install python3-pip -y
-sudo apt install pipx -y
+#########################################################
+# 7. Python tooling (pipx), snaps, vim-plug
+#########################################################
 pipx ensurepath
 pipx install httpie
 pipx inject httpie httpie-edgegrid edgegrid-python
-sudo apt install python3-pycurl -y
 touch ~/.hushlogin
 
-# setting list-view as default for nemo file manager (Budgie specific)
-# org : nemo : preferences : default-folder-viewer
-sudo apt-get install dconf-editor -y
+sudo snap install htop
+sudo snap install ngrok  # ngrok - https tunneling thru localhost
+sudo snap install httpie
+# sudo flatpak install flathub com.github.marktext.marktext -y # markdown editor
 
 # vim configuration
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # within vim do :PlugInstall
 
-sudo apt install tmux -y # terminal multiplexer
-
-# needed for Slack chatbot dev
-sudo snap install ngrok  # ngrok - https tunneling thru localhost
-
-# linux kernel
-sudo add-apt-repository ppa:cappelikan/ppa -y
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo apt update -y
-sudo apt install fastfetch -y    # for basic system stats
-
-
-# install java
-# https://www.linuxcapable.com/how-to-install-openjdk-18-on-ubuntu-22-04-lts/
-sudo apt install default-jdk -y
-sudo apt install zip unzip -y
-
-# setup for gcloud CLI - https://cloud.google.com/sdk/docs/install#deb
-sudo apt-get update -y && sudo apt-get upgrade -y
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg
-sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
-
-# final refresh and cleanup
-sudo apt dist-upgrade -y
-sudo apt-get upgrade -y
-sudo apt autoremove -y
+curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 chmod u+x ./desktop.sh
-curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \
-           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# httpie
-sudo snap install httpie
-
-# copy dotfiles
+#########################################################
+# 8. Copy dotfiles
+#########################################################
 cp .vimrc ~/
 cp .bashrc ~/
 cp .inputrc ~/
@@ -120,10 +128,3 @@ cp .psqlrc ~/
 source ~/.vimrc
 source ~/.bashrc
 source ~/.inputrc
-
-sudo apt-get install fonts-powerline
-sudo apt install libfuse2t64 -y   # need this for Cursor
-sudo apt install ncdu -y
-sudo apt install fd-find -y
-sudo apt install zoxide -y
-
