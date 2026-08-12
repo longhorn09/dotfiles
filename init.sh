@@ -50,7 +50,8 @@ sudo apt-get install -y \
   libfuse2t64 \
   ncdu \
   fd-find \
-  zoxide
+  zoxide \
+  smartmontools
   #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
   #sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.13 2  # higher priority 2
   #sudo apt install flatpak -y
