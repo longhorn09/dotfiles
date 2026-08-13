@@ -3,10 +3,10 @@
 -- -----------------------------------------------------------------------------
 
 -- Automatically switch to vertical/expanded display when query output is wider than screen
-\pset null '¤'
+-- \pset null '¤'
 
 -- Display NULL values visibly instead of blank spaces
-\pset null '[NULL]'
+-- \pset null '[NULL]'
 
 -- Show query execution duration for every statement
 \timing on
