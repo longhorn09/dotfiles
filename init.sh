@@ -96,6 +96,15 @@ npm config set fund false  # disable funding message during npm install, equiv: 
 npm install -g forever
 # sudo npm set editor code # for vscode
 
+##########################################################
+# install cursor-cli
+#########################################################
+# 1. Download and run the official installer script
+curl https://cursor.com/install -fsS | bash
+
+# 2. Add ~/.local/bin to your system PATH
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
 #########################################################
 # 7. Python tooling (pipx), snaps, vim-plug
 #########################################################
