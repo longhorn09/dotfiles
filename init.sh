@@ -106,6 +106,20 @@ curl https://cursor.com/install -fsS | bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 
 #########################################################
+# Add the WezTerm APT repository key
+#########################################################
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+
+# Add the repository to your sources list
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+
+# Update repository lists and install WezTerm
+sudo apt update -y
+sudo apt install wezterm -y
+echo "alias wezterm='WAYLAND_DISPLAY= wezterm'" >> ~/.bashrc
+mkdir ~/.config/wezterm
+cp ./wezterm.lua ~/.config/wezterm
+#########################################################
 # 7. Python tooling (pipx), snaps, vim-plug
 #########################################################
 pipx ensurepath
