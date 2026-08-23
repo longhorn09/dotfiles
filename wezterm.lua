@@ -35,6 +35,7 @@ config.font = wezterm.font_with_fallback({
   { family = 'JetBrains Mono', weight = 'Medium' },
   'Nerd Font Symbols Only',
 })
+--config.font = wezterm.font("DankMono Nerd Font")
 config.font_size = 11.0
 config.harfbuzz_features = { 'calt', 'liga', 'dlig' } -- Enable ligatures
 

@@ -31,6 +31,10 @@ sudo apt-get update -y
 #########################################################
 # 4. All apt packages in one pass
 #########################################################
+sudo snap install snapcraft --classic
+sudo snap install lxd
+sudo lxd init --auto
+
 sudo apt-get install -y \
   vim \
   ppa-purge \
