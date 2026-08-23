@@ -24,4 +24,32 @@ config.keys = {
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
 }
+
+-- Color & Theme
+config.color_scheme = 'Catppuccin Mocha' -- Built-in scheme
+--config.color_scheme = 'Tokyo Night' -- Built-in scheme
+
+
+-- Typography
+config.font = wezterm.font_with_fallback({
+  { family = 'JetBrains Mono', weight = 'Medium' },
+  'Nerd Font Symbols Only',
+})
+config.font_size = 11.0
+config.harfbuzz_features = { 'calt', 'liga', 'dlig' } -- Enable ligatures
+
+-- Window Styling
+config.window_decorations = "RESIZE" -- Removes native OS title bar
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 20 -- macOS blur effect
+config.win32_system_backdrop = 'Mica'    -- Windows 11 blur effect
+
+-- Padding
+config.window_padding = {
+  left = 12,
+  right = 12,
+  top = 12,
+  bottom = 12,
+}
+
 return config
