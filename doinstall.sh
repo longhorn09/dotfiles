@@ -76,6 +76,36 @@ sudo apt-get install -y \
 sudo apt-get purge --auto-remove aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder -y
 
 #########################################################
+# Dhruva dock install
+#########################################################
+# 1. Disable default Ubuntu dock to prevent conflicts
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gnome-extensions disable ubuntu-dock@ubuntu.com
+
+# 2. Install dependencies
+sudo apt update
+sudo apt install -y git make libglib2.0-bin gnome-shell-extension-prefs
+
+# 3. Clone and build Dhruva Dock
+cd ~
+git clone https://github.com/narkagni/dhruva.git
+cd dhruva
+make install
+
+# 4. Copy schema system-wide & compile to prevent 'No such schema' errors
+sudo cp schemas/org.gnome.shell.extensions.dhruva.gschema.xml /usr/share/glib-2.0/schemas/
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+# 5. Enable the extension
+gnome-extensions enable dhruva@narkagni
+
+# 6. Apply your preferences: centered floating dock & disabled animations
+gsettings set org.gnome.shell.extensions.dhruva full-width false
+gsettings set org.gnome.shell.extensions.dhruva minimize-effect 'none'
+#gsettings set org.gnome.shell.extensions.dhruva peek-effect 'NONE'
+
+
+#########################################################
 # 5. Direct .deb installs (uses already-updated indexes)
 #########################################################
 # google chrome
