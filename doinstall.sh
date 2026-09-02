@@ -54,6 +54,11 @@ sudo apt-get install -y \
   intel-gpu-tools nvtop \
   libfuse2t64
 
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install steam mesa-vulkan-drivers mesa-vulkan-drivers:i386 -y
+
+
 echo "==> 4. Purging bloat packages..."
 sudo apt-get purge --auto-remove -y aisleriot mahjongg gnome-sudoku gnome-mines thunderbird gnome-2048 transmission-gtk gpodder
 
@@ -64,34 +69,14 @@ sudo apt-get install -y "$TEMP_DIR/chrome.deb"
 wget -q https://github.com/peazip/PeaZip/releases/download/10.5.0/peazip_10.5.0.LINUX.GTK2-1_amd64.deb -O "$TEMP_DIR/peazip.deb"
 sudo apt-get install -y "$TEMP_DIR/peazip.deb"
 
-echo "==> 6. Installing Dhruva Dock..."
-# Disable default Ubuntu dock
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false || true
-gnome-extensions disable ubuntu-dock@ubuntu.com || true
-
-# Clone, build, and register schema
-DHRUVA_DIR="$TEMP_DIR/dhruva"
-git clone https://github.com/narkagni/dhruva.git "$DHRUVA_DIR"
-cd "$DHRUVA_DIR"
-make install
-
-sudo cp schemas/org.gnome.shell.extensions.dhruva.gschema.xml /usr/share/glib-2.0/schemas/
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-gnome-extensions enable dhruva@narkagni || true
-
-# Configure preferences
-gsettings set org.gnome.shell.extensions.dhruva full-width false
-gsettings set org.gnome.shell.extensions.dhruva minimize-effect 'none'
-
 cd ~
 
 echo "==> 7. Managing Snaps..."
 sudo snap remove --purge firefox || true
 sudo snap install vlc discord gnome-calculator slack tree simple-scan
 sudo snap install google-cloud-cli --classic
-sudo snap install okular
 sudo snap install notepadnext --classic
+sudo snap install paint-electron
 
 echo "==> 8. Installing IBKR Desktop..."
 DOWNLOAD_DIR="$HOME/Downloads"
