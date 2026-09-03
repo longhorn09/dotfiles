@@ -43,7 +43,7 @@ sudo apt-get install -y \
   gnome-tweaks \
   materia-gtk-theme \
   net-tools \
-  python3-setuptools python3-pip pipx python3-pycurl \
+  python3-setuptools python3-venv python3-pip pipx python3-pycurl \
   dconf-editor \
   tmux \
   fastfetch \
